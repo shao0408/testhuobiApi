@@ -9,7 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpException;
 
 import com.huobi.common.request.Order;
-import com.huobi.common.util.OkHttpClientUtils;
+import com.huobi.common.util.HbdmHttpClient;
 
 public class FutureRestApiV1 implements IFutureRestApi {
 
@@ -73,7 +73,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(symbol)) {
   		  params.put("contract_code", contractCode);
     	}
-		String contractinfoRes= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_INFO, params);		
+		String contractinfoRes= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_INFO, params);		
     	return contractinfoRes;
     }
     @Override
@@ -82,7 +82,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(symbol)) {
     		  params.put("symbol", symbol);
     	}
-		String contractindexRes= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_INDEX, params);		
+		String contractindexRes= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_INDEX, params);		
     	return contractindexRes;
     }
     @Override
@@ -97,7 +97,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(symbol)) {
   		  params.put("contract_code", contractCode);
     	}
-		String contractinfoRes= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_PRICE_LIMIT, params);		
+		String contractinfoRes= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_PRICE_LIMIT, params);		
     	return contractinfoRes;  
     }
     @Override
@@ -112,7 +112,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(symbol)) {
   		  params.put("contract_code", contractCode);
     	}
-		String contractinfoRes= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_OPEN_INTEREST, params);		
+		String contractinfoRes= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_CONTRACT_OPEN_INTEREST, params);		
     	return contractinfoRes;  
 	}
  
@@ -124,7 +124,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(type)) {
   		  params.put("type", type);
     	}
-		String contractinfoRes= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_DEPTH, params);		
+		String contractinfoRes= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_DEPTH, params);		
     	return contractinfoRes;  
 	}
     
@@ -136,7 +136,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(period)) {
   		  params.put("period", period);
     	}
-		String res= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_KLINE, params);		
+		String res= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_KLINE, params);		
     	return res;  
     }
     
@@ -145,7 +145,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(symbol)) {
     		  params.put("symbol", symbol);
     	}
-		String res= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_TICKER, params);		
+		String res= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_TICKER, params);		
 		return res;  
     }
 
@@ -157,7 +157,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(size)) {
   		  params.put("size", size);
   	}
-		String res= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_TRADE, params);		
+		String res= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_TRADE, params);		
 		return res;  
     }
     public String future_market_history_trade(String symbol,String size) throws HttpException, IOException{
@@ -168,7 +168,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(size)) {
   		  params.put("size", size);
   	}
-		String res= OkHttpClientUtils.getInstance(null).doGet(url_prex+HUOBI_FUTURE_TRADE, params);		
+		String res= HbdmHttpClient.getInstance(null).doGet(url_prex+HUOBI_FUTURE_TRADE, params);		
 		return res;  
     }
 
@@ -178,7 +178,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     		  params.put("symbol", symbol);
     	}
     
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ACCOUNT_INFO, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ACCOUNT_INFO, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_position_info(String symbol) throws HttpException, IOException{
@@ -187,7 +187,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     		  params.put("symbol", symbol);
     	}
     
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_POSITION_INFO, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_POSITION_INFO, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_order(String symbol,String contractType,String contractCode,String clientOrderId,String price,String volume,String direction,String offset,String leverRate,String orderPriceType) throws HttpException, IOException{
@@ -223,12 +223,12 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(orderPriceType)) {
     		  params.put("orderPriceType", orderPriceType);
       	}
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_batchorder(List<Order> orders) throws HttpException, IOException{
 		Map<String, String> params = new HashMap<>();
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_cancel(String orderId,String clientOrderId) throws HttpException, IOException{
@@ -240,7 +240,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
   		  params.put("client_order_id", clientOrderId);
     	}
 
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER_CANCEL, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER_CANCEL, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_cancelall(String symbol) throws HttpException, IOException{
@@ -249,7 +249,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     		  params.put("symbol", symbol);
     	}
 
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER_CANCEL_ALL, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER_CANCEL_ALL, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_order_info(String orderId,String clientOrderId) throws HttpException, IOException{
@@ -261,7 +261,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
   		  params.put("client_order_id", clientOrderId);
     	}
 
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER_CANCEL, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_ORDER_CANCEL, params,new HashMap<>());		
 		return res;  
 	}
 	
@@ -279,7 +279,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(pageSize)) {
   		  params.put("page_size", pageSize);
     	}
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_CONTRACT_ORDER_DETAIL, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_CONTRACT_ORDER_DETAIL, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_openorders(String symbol,String pageIndex,String pageSize) throws HttpException, IOException{
@@ -293,7 +293,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(pageSize)) {
   		  params.put("page_size", pageSize);
     	}
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_CONTRACE_OPENORDERS, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_CONTRACE_OPENORDERS, params,new HashMap<>());		
 		return res;  
 	}
 	public String future_contract_hisorders(String symbol,String tradeType,String type,String status,String createDate,String pageIndex,String pageSize) throws HttpException, IOException{
@@ -319,7 +319,7 @@ public class FutureRestApiV1 implements IFutureRestApi {
     	if (!StringUtils.isEmpty(pageSize)) {
   		  params.put("page_size", pageSize);
     	}
-		String res= OkHttpClientUtils.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_CONTRACT_HISORDERS, params,new HashMap<>());		
+		String res= HbdmHttpClient.getInstance(null).call(api_key,secret_key,"POST",url_prex+HUOBI_FUTURE_CONTRACT_HISORDERS, params,new HashMap<>());		
 		return res;  
 	}
 	}
