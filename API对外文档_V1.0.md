@@ -8,7 +8,7 @@ Restful API
 
 #### 获取合约信息 
 
-URL [/v1/contract_contract_info](http://www.huobiapps.com/api/v1/contract_contract_info)
+URL /v1/contract_contract_info
 
 **请求参数**
 
@@ -195,7 +195,7 @@ contract_code没有填值，
 # Request
 
 GET
-http:///api.hbdm.com/api/v1/contract_price_limit?symbol=BTC
+http://api.hbdm.com/api/v1/contract_price_limit?symbol=BTC
 
 # Response
 
@@ -252,7 +252,7 @@ URL /v1/contract_open_interest
 # Request
 
 GET
-http:///api.hbdm.com/api/v1/contract_open_interest?symbol=BTC
+http://api.hbdm.com/api/v1/contract_open_interest?symbol=BTC
 
 # Response
 
