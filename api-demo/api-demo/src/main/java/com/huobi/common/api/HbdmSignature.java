@@ -1,14 +1,14 @@
 package com.huobi.common.api;
 
-public class HuobiSignature {
+public class HbdmSignature {
 	private String accessKey;
 	private String secretKey;
 	
-	public HuobiSignature() {
+	public HbdmSignature() {
 		super();
 	}
 
-	public HuobiSignature(String accessKey, String secretKey) {
+	public HbdmSignature(String accessKey, String secretKey) {
 		super();
 		this.accessKey = accessKey;
 		this.secretKey = secretKey;

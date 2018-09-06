@@ -44,63 +44,34 @@ URL /v1/contract_contract_info
 ```
 GET http://api.hbdm.com/api/v1/contract_contract_info
 # Response
-
 {
-
 "status": "ok",
-
 "data": [
-
 {
-
 "symbol": "BTC",
-
 "contract_code": "BTC0304",
-
 "contract_type": "this_week",
-
 "contract_size": 100,
-
 "contract_multiplier": 4,
-
 "price_tick": 0.001,
-
 "delivery_date": "20180704",
-
 "create_date": "20180604",
-
 "contract_status": 1
-
 },
-
 {
-
 "symbol": "ETH",
-
 "contract_code": "ETH0304",
-
 "contract_type": "this_week",
-
 "contract_size": 100,
-
 "contract_multiplier": 4,
-
 "price_tick": 0.001,
-
 "delivery_date": "20180704",
-
 "create_date": "20180604",
-
 "contract_status": 1
-
 }
-
 ]
-
 "ts":158797866555
-
 }
-
 }
 ```
 #### 获取合约指数信息 

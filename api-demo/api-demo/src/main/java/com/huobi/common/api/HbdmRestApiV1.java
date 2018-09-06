@@ -11,7 +11,7 @@ import org.apache.http.HttpException;
 import com.huobi.common.request.Order;
 import com.huobi.common.util.HbdmHttpClient;
 
-public class FutureRestApiV1 implements IFutureRestApi {
+public class HbdmRestApiV1 implements IHbdmRestApi {
 
 	private String secret_key;
 	
@@ -19,13 +19,13 @@ public class FutureRestApiV1 implements IFutureRestApi {
 	
 	private String url_prex;
 
-	public FutureRestApiV1(String url_prex,String api_key, String secret_key) {
+	public HbdmRestApiV1(String url_prex,String api_key, String secret_key) {
 		this.api_key = api_key;
 		this.secret_key = secret_key;
 		this.url_prex = url_prex;
 	}
 
-	public FutureRestApiV1(String url_prex) {
+	public HbdmRestApiV1(String url_prex) {
 		this.url_prex = url_prex;
 
 	}

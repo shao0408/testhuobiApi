@@ -7,7 +7,7 @@ import org.apache.http.HttpException;
 
 import com.huobi.common.request.Order;
 
-public interface IFutureRestApi {
+public interface IHbdmRestApi {
 	
 	/**
      * 期货行情

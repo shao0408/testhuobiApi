@@ -6,18 +6,18 @@ import org.apache.http.HttpException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class FutureClient {
-	  private static Logger logger = LoggerFactory.getLogger(FutureClient.class);
+public class HbdmClient {
+	  private static Logger logger = LoggerFactory.getLogger(HbdmClient.class);
 	public static void main(String[] args) throws HttpException, IOException {
 			
 			/**
 			 *  get请求无需发送身份认证,通常用于获取行情，市场深度等公共信息
 			 */
-		  	String api_key = "b3f6e555555599";  
-	       	String secret_key = "70ff555555555e4";  
+		  	String api_key = "";  
+	       	String secret_key = "";  
 	 	    String url_prex = "http://api.hbdm.com";
-			IFutureRestApi futureGetV1 = new FutureRestApiV1(url_prex);
-			IFutureRestApi futurePostV1 = new FutureRestApiV1(url_prex, api_key,secret_key);
+			IHbdmRestApi futureGetV1 = new HbdmRestApiV1(url_prex);
+			IHbdmRestApi futurePostV1 = new HbdmRestApiV1(url_prex, api_key,secret_key);
 
 			//获取合约信息
 			String contractInfo=futureGetV1.future_contract_info("BTC", "this_week", "");
