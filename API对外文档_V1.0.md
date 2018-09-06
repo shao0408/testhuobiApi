@@ -14,7 +14,7 @@ URL [/v1/contract_contract_info](http://www.huobiapps.com/api/v1/contract_contr
 
 | **参数名称**      | **参数类型** | **必填** | **描述**                                   |
 | ------------- | -------- | ------ | ---------------------------------------- |
-| symbol        | string   | 否      | "BTC","ETH","EOS","HB10"...              |
+| symbol        | string   | 否      | "BTC","ETH"...              |
 | contract_type | string   | 否      | 合约类型: this_week:当周 next_week:下周 quarter:季度 |
 | contract_code | string   | 否      | BTC1403                                  |
 
@@ -111,7 +111,7 @@ URL */v1/contract_index*
 
 | **参数名称** | **参数类型** | **必填** | **描述**                      |
 | -------- | -------- | ------ | --------------------------- |
-| symbol   | string   | 是      | "BTC","ETH","EOS","HB10"... |
+| symbol   | string   | 是      | "BTC","ETH"... |
 
 **返回参数**
 
@@ -119,7 +119,7 @@ URL */v1/contract_index*
 | -------------------- | -------- | ------- | ------------- | --------------------------- |
 | status               | true     | string  | 请求处理结果        | "ok" , "error"              |
 | \<list\>(属性名称: data) |          |         |               |                             |
-| symbol               | true     | string  | 指数代码          | "BTC","ETH","EOS","HB10"... |
+| symbol               | true     | string  | 指数代码          | "BTC","ETH"... |
 | index_price          | true     | decimal | 指数价格          |                             |
 | \</list\>            |          |         |               |                             |
 | ts                   | true     | long    | 响应生成时间点，单位：毫秒 |                             |
@@ -161,13 +161,13 @@ http://api.hbdm.com/api/v1/contract_index?symbol=BTC
 ```
 #### 获取合约最高限价和最低限价
 
-URL [/v1/contract_price_limit](http://www.huobiapps.com/api/v1/contract_price_limit)
+URL /v1/contract_price_limit
 
 **请求参数**
 
 | **参数名称**      | **参数类型** | **必填** | **描述**                                   |
 | ------------- | -------- | ------ | ---------------------------------------- |
-| symbol        | string   | 否      | "BTC","ETH","EOS","HB10"...              |
+| symbol        | string   | 否      | "BTC","ETH"...              |
 | contract_type | string   | 否      | 合约类型: 当周"this_week", 次周"next_week", 季度"quarter" |
 | contract_code | string   | 否      | BTC1403                                  |
 
@@ -229,7 +229,7 @@ URL /v1/contract_open_interest
 
 | **参数名称**      | **参数类型** | **必填** | **描述**                                   |
 | ------------- | -------- | ------ | ---------------------------------------- |
-| symbol        | string   | 否      | "BTC","ETH","EOS","HB10"...              |
+| symbol        | string   | 否      | "BTC","ETH"...              |
 | contract_type | string   | 否      | 合约类型: 当周"this_week", 次周"next_week", 季度"quarter" |
 | contract_code | string   | 否      | BTC1403                                  |
 
@@ -1027,7 +1027,7 @@ URL [/v1/contract_account_info](http://www.huobiapps.com/api/v1/contract_accoun
 
 | **参数名称** | **是否必须** | **类型** | **描述** | **默认值** | **取值范围**                                 |
 | -------- | -------- | ------ | ------ | ------- | ---------------------------------------- |
-| symbol   | false    | string | 品种代码   |         | "BTC","ETH","EOS","HB10"...如果缺省，默认返回所有品种 |
+| symbol   | false    | string | 品种代码   |         | "BTC","ETH"...如果缺省，默认返回所有品种 |
 
 **返回参数**
 
@@ -1035,7 +1035,7 @@ URL [/v1/contract_account_info](http://www.huobiapps.com/api/v1/contract_accoun
 | -------------------- | -------- | ------- | -------------------- | --------------------------- |
 | status               | true     | string  | 请求处理结果               | "ok" , "error"              |
 | \<list\>(属性名称: data) |          |         |                      |                             |
-| symbol               | true     | string  | 品种代码                 | "BTC","ETH","EOS","HB10"... |
+| symbol               | true     | string  | 品种代码                 | "BTC","ETH"... |
 | margin_balance       | true     | decimal | 账户权益                 |                             |
 | margin_position      | true     | decimal | 持仓保证金（当前持有仓位所占用的保证金） |                             |
 | margin_frozen        | true     | decimal | 冻结保证金                |                             |
@@ -1143,7 +1143,7 @@ URL /v1/contract_position_info
 
 | **参数名称** | **是否必须** | **类型** | **描述** | **默认值** | **取值范围**                                 |
 | -------- | -------- | ------ | ------ | ------- | ---------------------------------------- |
-| symbol   | false    | string | 品种代码   |         | "BTC","ETH","EOS","HB10"...如果缺省，默认返回所有品种 |
+| symbol   | false    | string | 品种代码   |         | "BTC","ETH"...如果缺省，默认返回所有品种 |
 
 **返回参数**
 
@@ -1151,7 +1151,7 @@ URL /v1/contract_position_info
 | -------------------- | -------- | ------- | ------------- | --------------------------- |
 | status               | true     | string  | 请求处理结果        | "ok" , "error"              |
 | \<list\>(属性名称: data) |          |         |               |                             |
-| symbol               | true     | string  | 品种代码          | "BTC","ETH","EOS","HB10"... |
+| symbol               | true     | string  | 品种代码          | "BTC","ETH"... |
 | contract_code        | true     | string  | 合约代码          |                             |
 | contract_type        | true     | string  | 合约类型          |                             |
 | volume               | true     | decimal | 持仓量           |                             |
@@ -1240,7 +1240,7 @@ URL /v1/contract_order
 
 | **参数名**          | **参数类型** | **必填** | **描述**                                   |
 | ---------------- | -------- | ------ | ---------------------------------------- |
-| symbol           | string   | 否      | "BTC","ETH","EOS","HB10"...              |
+| symbol           | string   | 否      | "BTC","ETH"...              |
 | contract_type    | string   | 否      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
 | contract_code    | string   | 否      | BTC1403                                  |
 | client_order_id  | long     | 是      | 客户自己填写和维护，这次一定要大于上一次                     |
@@ -1292,7 +1292,7 @@ URL /v1/contract_batchorder
 | **参数名**                     | **参数类型** | **必填** | **描述**                                   |
 | --------------------------- | -------- | ------ | ---------------------------------------- |
 | \<list\>(属性名称: orders_data) |          |        |                                          |
-| symbol                      | string   | 否      | "BTC","ETH","EOS","HB10"...              |
+| symbol                      | string   | 否      | "BTC","ETH"...              |
 | contract_type               | string   | 否      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
 | contract_code               | string   | 否      | BTC1403                                  |
 | client_order_id             | long     | 是      | 客户自己填写和维护，这次一定要大于上一次                     |
@@ -1472,7 +1472,7 @@ URL /v1/contract_cancelall
 
 | **参数名称** | **是否必须** | **类型** | **描述**                            |
 | -------- | -------- | ------ | --------------------------------- |
-| symbol   | true     | string | 品种代码，如"BTC","ETH","EOS","HB10"... |
+| symbol   | true     | string | 品种代码，如"BTC","ETH"... |
 
 **返回参数**
 
@@ -1716,7 +1716,7 @@ URL /v1/contract_order_detail
 
 | **参数名称**   | **是否必须** | **类型**     | **描述**                      |
 | ---------- | -------- | ---------- | --------------------------- |
-| symbol     | **true** | **string** | "BTC","ETH","EOS","HB10"... |
+| symbol     | **true** | **string** | "BTC","ETH"... |
 | order_id   | **true** | **long**   | **订单id**                    |
 | page_index | false    | int        | 第几页,不填第一页                   |
 | page_size  | false    | int        | 不填默认20，不得多于50               |
@@ -1861,7 +1861,7 @@ URL */v1/contract_openorders*
 
 | **参数名称**   | **是否必须** | **类型** | **描述**        | **默认值** | **取值范围**                    |
 | ---------- | -------- | ------ | ------------- | ------- | --------------------------- |
-| symbol     | false    | string | 品种代码          |         | "BTC","ETH","EOS","HB10"... |
+| symbol     | false    | string | 品种代码          |         | "BTC","ETH"... |
 | page_index | false    | int    | 页码，不填默认第1页    | 1       |                             |
 | page_size  | false    | int    | 不填默认20，不得多于50 | 20      |                             |
 
@@ -1983,7 +1983,7 @@ URL /v1/contract_hisorders
 
 | **参数名称**    | **是否必须** | **类型** | **描述**        | **默认值** | **取值范围**                                 |
 | ----------- | -------- | ------ | ------------- | ------- | ---------------------------------------- |
-| symbol      | true     | string | 品种代码          |         | "BTC","ETH","EOS","HB10"...              |
+| symbol      | true     | string | 品种代码          |         | "BTC","ETH"...              |
 | trade_type  | true     | int    | 交易类型          |         | 0:全部,1:买入开多,2: 卖出开空,3: 买入平空,4: 卖出平多,5: 卖出强平,6: 买入强平,7:交割平多,8: 交割平空 |
 | type        | true     | int    | 类型            |         | 1:所有订单、2：结束汏订单                           |
 | status      | true     | int    | 订单状态          |         | 0:全部,3:未成交, 4: 部分成交,5: 部分成交已撤单,6: 全部成交,7:已撤单 |
