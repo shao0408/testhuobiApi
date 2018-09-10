@@ -104,29 +104,17 @@ http://api.hbdm.com/api/v1/contract_index?symbol=BTC
 
 # Response
 {
-
 "status":"ok"
-
 "data": [
-
 {
-
 "symbol": BTC,
-
 "current_index":471.0817
-
 },
-
 {
-
 ……………
-
 }
-
 ],
-
 "ts": 1490759594752
-
 }
 ```
 #### 获取合约最高限价和最低限价
@@ -170,25 +158,15 @@ http://api.hbdm.com/api/v1/contract_price_limit?symbol=BTC
 # Response
 
 {
-
 "status":"ok",
-
 "data": {
-
 "symbol":"BTC",
-
 "high_limit":443.07,
-
 "low_limit":417.09,
-
 "contract_code":"BTC0330",
-
 "contract_type":"this_week"
-
 }
-
 "ts": 1490759594752
-
 }
 ```
 #### 获取当前可用合约总持仓量 
@@ -227,23 +205,14 @@ http://api.hbdm.com/api/v1/contract_open_interest?symbol=BTC
 # Response
 
 {
-
 "status":"ok",
-
 "data":
-
 {
-
 "symbol":"BTC",
-
 "contract_type": "this_week",
-
 "volume":123,
-
 "amount":106,
-
 "contract_code": "BTC0213"
-
 }
 
 "ts": 1490759594752
@@ -274,15 +243,10 @@ URL /market/depth
 tick 说明:
 
 "tick": {
-
   "id": 消息id.
-
   "ts": 消息生成时间，单位：毫秒.
-
   "bids": 买盘,[price(挂单价), vol(此价格挂单张数)], 按price降序.
-
   "asks": 卖盘,[price(挂单价), vol(此价格挂单张数)], 按price升序.
-
 }
 ```
 **示例**
@@ -294,109 +258,58 @@ GET http:///api.hbdm.com/api/market/depth?symbol=BTC_CQ&type=step5
 # Response
 
 {
-
 "ch": "market.BTC_CQ.depth.step5",
-
 "status": "ok",
-
 "ts": 1529908459885,
-
 "tick": {
-
 "id": 1529908459,
-
 "ts": 1529908459737,
-
 "asks": [
-
 [5001, 6],
-
 [5002, 6],
-
 [5003, 6],
-
 [5004, 6],
-
 [5005, 6],
-
 [5006, 6],
-
 [5007, 6],
-
 [5008, 6],
-
 [5009, 6],
-
 [5010, 6],
-
 [5011, 6],
-
 [5012, 6],
-
 [5013, 6],
-
 [5014, 6],
-
 [5015, 6],
-
 [5016, 6],
-
 [5017, 6],
-
 [5018, 6],
-
 [5019, 6],
-
 [5020, 6]
-
 ],
 
 "bids": [
-
 [5000, 3],
-
 [4999, 6],
-
 [4998, 6],
-
 [4997, 6],
-
 [4996, 6],
-
 [4995, 6],
-
 [4994, 6],
-
 [4993, 6],
-
 [4992, 6],
-
 [4991, 6],
-
 [4990, 6],
-
 [4989, 6],
-
 [4988, 6],
-
 [4987, 6],
-
 [4986, 6],
-
 [4985, 6],
-
 [4984, 6],
-
 [4983, 6],
-
 [4982, 6],
-
 [4981, 6]
-
 ]
-
 }
-
 }
 ```
 #### 获取K线数据
@@ -424,27 +337,16 @@ URL
 Data说明：
 ```
 "data": [
-
   {
-
       "id": K线id,
-
       "vol": 成交量(张),
-
       "count": 成交笔数,
-
       "open": 开盘价,
-
       "close": 收盘价,当K线为最晚的一根时，是最新成交价
-
       "low": 最低价,
-
       "high": 最高价,
-
       "amount": 成交量(币), 即 sum(每一笔成交量(张)\*单张合约面值/该笔成交价)
-
     },
-
     ...
 
 ]
@@ -459,232 +361,62 @@ http://api.hbdm.com/market/history/kline?period=1min&size=200&symbol=BTC_CQ
 # Response
 
 {
-
 "ch": "market.BTC_CQ.kline.1min",
-
 "data": [{
-
 "vol": 2446,
-
 "close": 5000,
-
 "count": 2446,
-
 "high": 5000,
-
 "id": 1529898120,
-
 "low": 5000,
-
 "open": 5000,
-
 "amount": 48.92
-
-}, {
-
+},
+ {
 "vol": 55179,
-
 "close": 5000,
-
 "count": 55179,
-
 "high": 5000,
-
 "id": 1529898180,
-
 "low": 5000,
-
 "open": 5000,
-
 "amount": 1103.58
-
-}, {
-
+},
+ {
 "vol": 5711,
-
 "close": 5000,
-
 "count": 5711,
-
 "high": 5000,
-
 "id": 1529898240,
-
 "low": 5000,
-
 "open": 5000,
-
 "amount": 114.22
-
-}, {
-
+},
+ {
 "vol": 0,
-
 "close": 5000,
-
 "count": 0,
-
 "high": 5000,
-
 "id": 1529898300,
-
 "low": 5000,
-
 "open": 5000,
-
 "amount": 0
-
-}, {
-
+},
+ {
 "vol": 0,
-
 "close": 5000,
-
 "count": 0,
-
 "high": 5000,
-
-"id": 1529898360,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
-"id": 1529898420,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
-"id": 1529898480,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
-"id": 1529898540,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
-"id": 1529898600,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
-"id": 1529898660,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
-"id": 1529898720,
-
-"low": 5000,
-
-"open": 5000,
-
-"amount": 0
-
-}, {
-
-"vol": 0,
-
-"close": 5000,
-
-"count": 0,
-
-"high": 5000,
-
 "id": 1529898780,
-
 "low": 5000,
-
 "open": 5000,
-
 "amount": 0
-
 }],
-
 "status": "ok",
-
 "ts": 1529908345313
-
 }
+
+
 ```
 #### 获取聚合行情
 
@@ -709,27 +441,16 @@ URL
 tick说明:
 ```
 "tick": {
-
   "id": K线id,
-
   "vol": 成交量（张）,
-
   "count": 成交笔数,
-
   "open": 开盘价,
-
   "close": 收盘价,当K线为最晚的一根时，是最新成交价
-
   "low": 最低价,
-
   "high": 最高价,
-
   "amount": 成交量(币), 即 sum(每一笔成交量(张)\*单张合约面值/该笔成交价)
-
   "bid": [买1价,买1量(张)],
-
   "ask": [卖1价,卖1量(张)]
-
 }
 ```
 **示例**
@@ -740,35 +461,20 @@ GET
 http:api.hbdm.com/market/detail/merged?symbol=BTC_CQ
 # Response
 {
-
 "ch": "market.BTC_CQ.detail.merged",
-
 "status": "ok",
-
 "tick": {
-
 "vol":"13305",
-
 "ask": [5001, 2],
-
 "bid": [5000, 1],
-
 "close": "5000",
-
 "count": "13305",
-
 "high": "5000",
-
 "id": 1529387841,
-
 "low": "5000",
-
 "open": "5000",
-
 "ts": 1529387842137,
-
 "amount": "266.1"
-
 },
 
 "ts": 1529387842137
@@ -798,29 +504,17 @@ URL /market/trade
 Tick说明：
 ```
 "tick": {
-
   "id": 消息id,
-
   "ts": 最新成交时间,
-
   "data": [
-
     {
-
       "id": 成交id,
-
       "price": 成交价钱,
-
       "amount": 成交量(张),
-
       "direction": 主动成交方向,
-
       "ts": 成交时间
-
     }
-
   ]
-
 }
 ```
 **成交量(张)amount说明:**
@@ -837,35 +531,20 @@ http://api.hbdm.com/market/trade?symbol=BTC_CQ
 # Response
 
 {
-
 "ch": "market.BTC_CQ.trade.detail",
-
 "status": "ok",
-
 "tick": {
-
 "data": [{
-
 "amount": "1",
-
 "direction": "sell",
-
 "id": 6010881529486944176,
-
 "price": "5000",
-
 "ts": 1529386945343
-
 }],
-
 "id": 1529388202797,
-
 "ts": 1529388202797
-
 },
-
 "ts": 1529388202797
-
 }
 ```
 #### 批量获取最近的交易记录
@@ -891,25 +570,15 @@ URL /market/history/trade
 data说明：
 ```
 "data": {
-
   "id": 消息id,
-
   "ts": 最新成交时间,
-
   "data": [
-
     {
-
       "id": 成交id,
-
       "price": 成交价,
-
       "amount": 成交量(张),
-
       "direction": 主动成交方向,
-
       "ts": 成交时间
-
     }
 
   ]
@@ -930,43 +599,24 @@ http:///www.hbdm.com/api/v1
 # Response
 
 {
-
 "ch": "market.BTC_CQ.trade.detail",
-
 "status": "ok",
-
 "ts": 1529388050915
-
 "data": [
-
 {
-
 "id": 601088,
-
 "ts": 1529386945343
-
 "data": [
-
 {
-
 "amount": 1,
-
 "direction": "sell",
-
 "id": 6010881529486944176,
-
 "price": 5000,
-
 "ts": 1529386945343
-
 }
-
 ],
-
 }
-
 ]
-
 }
 
 ```
@@ -1026,83 +676,44 @@ http://api.hbdm.com/api/v1/contract_account_info
 # Response
 
 {
-
 "status": "ok",
-
 "data": [
-
 {
-
 "symbol": "BTC",
-
 "margin_balance": 1,
-
 "margin_position": 0,
-
 "margin_frozen": 3.33,
-
 "margin_available": 0.34,
-
 "profit_real": 3.45,
-
 "profit_unreal": 7.45,
-
 "risk_rate": 100,
-
 "liquidation_price": 100
-
 },
-
 {
-
 "symbol": "BTC",
-
 "margin_balance": 1,
-
 "margin_position": 0,
-
 "margin_frozen": 3.33,
-
 "margin_available": 0.34,
-
 "profit_real": 3.45,
-
 "profit_unreal": 7.45,
-
 "risk_rate": 100,
-
 "liquidation_price": 100
-
 },
-
 {
-
 "symbol": "ETH",
-
 "margin_balance": 1,
-
 "margin_position": 0,
-
 "margin_frozen": 3.33,
-
 "margin_available": 0.34,
-
 "profit_real": 3.45,
-
 "profit_unreal": 7.45,
-
 "risk_rate": 100,
-
 "liquidation_price": 100
-
 }
-
 ]
-
 "ts":158797866555
-
 }
-
 }
 ```
 #### 获取用户持仓信息
@@ -1146,55 +757,30 @@ POST
 http://api.hbdm.com/api/v1/contract_position
 
 # Response
-
 {
-
 "status": ok,
-
 "data": [
-
 {
-
 "symbol": "BTC",
-
 "contract_code": "BTC0304",
-
 "contract_type": "this_week",
-
 "volume": 1,
-
 "available": 0,
-
 "frozen": 0.3,
-
 "cost_open": 422.78,
-
 "cost_hold": 422.78,
-
 "profit_unreal": 0.00007096,
-
 "profit_rate": 0.07,
-
 "profit": 0.97,
-
 "position_margin": 3.4,
-
 "lever_rate": 10,
-
 "direction":"buy"
-
 },
-
 {
-
 ………
-
 }
-
 ],
-
 "ts": 158797866555
-
 }
 ```
 
@@ -1240,17 +826,11 @@ POST
 http://api.hbdm.com/api/v1/contract_order
 
 # Response
-
 {
-
 "status": "ok",
-
 "order_id": 986,
-
 "client_order_id": 9086,
-
 "ts": 158797866555
-
 }
 ```
 #### 合约批量下单 
@@ -1301,65 +881,35 @@ POST
 http:///api.hbdm.com/api/v1/contract_batchorder
 
 # Response
-
 {
-
 "status": "ok"
-
 "data": {
-
 "errors":[
-
 {
-
 "index":0,
-
 "err_code": 200417,
-
 "err_msg": "invalid symbol"
-
 },
-
 {
-
 "index":3,
-
 "err_code": 200415,
-
 "err_msg": "invalid symbol"
-
 }
-
 ],
-
 "success":[
-
 {
-
 "index":1,
-
 "order_id":161256,
-
 "client_order_id":1344567
-
 },
-
 {
-
 "index":2,
-
 "order_id":161257,
-
 "client_order_id":1344569
-
 }
-
 ]
-
 },
-
 "ts": 1490759594752
-
 }
 ```
 #### 撤销订单 
@@ -1399,39 +949,22 @@ http:///api.hbdm.com.com/api/v1/contract_cancel
 # Response
 
 #多笔订单返回结果(成功订单ID,失败订单ID)
-
 {
-
 "status": "ok"
-
 "errors":[
-
 {
-
 order_id:161251,
-
 err_code: "1002",
-
 err_msg: "订单不存在"
-
 },
-
 {
-
 order_id:161253,
-
 err_code: "1002",
-
 err_msg: "订单不存在"
-
 }
-
 ],
-
 "success":["161256","1344567"],
-
 "ts": 1490759594752
-
 }
 ```
 #### 全部撤单 
@@ -1466,65 +999,36 @@ POST
 http://api.hbdm.com.com/api/v1/contract_cancel
 
 {
-
 "symbol": "BTC"
-
 }
-
 # Response
-
 #多笔订单返回结果(成功订单ID,失败订单ID)
-
 {
-
 "status": "ok"
-
 "data": {
-
 "errors":[
-
 {
-
 order_id:"161251",
-
 err_code: 200417,
-
 err_msg: "invalid symbol"
-
 },
-
 {
-
 order_id:161253,
-
 err_code: 200415,
-
 err_msg: "invalid symbol"
-
 }
-
 ],
-
 " successes":[161256,1344567]
-
 },
 
 "ts": 1490759594752
-
 }
-
 错误：
-
 {
-
 "status": "error"，
-
 "err_code": 20012，
-
 "err_msg": "invalid symbol"，
-
 "ts": 1490759594752
-
 }
 ```
 #### 获取合约订单信息
@@ -1577,101 +1081,53 @@ POST
 http://api.hbdm.com.com/api/v1/contract_order_info
 
 # Response
-
 {
-
 "status": "ok",
-
 "data":[
-
 {
-
 "symbol": "LTC",
-
 "contract_type": "this_week",
-
 "contract_code": "LTC0815",
-
 "volume": 111,
-
 "price": 1111,
-
 "order_price_type": "market",
-
 "direction": "buy",
-
 "offset": "open",
-
 "lever_rate": 10,
-
 "order_id": 106837,
-
 "client_order_id": 10683,
-
 "order_source": "web",
-
 "created_at": 1408076414000,
-
 "trade_volume": 1,
-
 "trade_turnover": 1200,
-
 "fee": 0,
-
 "trade_avg_price": 10,
-
 "margin_frozen": 10,
-
 "profit ": 10,
-
 "status": 0
-
 },
-
 {
-
 "symbol": "LTC",
-
 "contract_type": "this_week",
-
 "contract_code": "LTC0815",
-
 "volume": 111,
-
 "price": 1111,
-
 "order_price_type": "market",
-
 "direction": "buy",
-
 "offset": "open",
-
 "lever_rate": 10,
-
 "order_id": 106837,
-
 "client_order_id": 10683,
-
 "order_source": "web",
-
 "created_at": 1408076414000,
-
 "trade_volume": 1,
-
 "trade_turnover": 1200,
-
 "fee": 0,
-
 "trade_avg_price": 10,
-
 "margin_frozen": 10,
-
 "profit ": 10,
-
 "status": 0
-
 }
-
 ],
 
 "ts": 1490759594752
@@ -1732,95 +1188,50 @@ POST
 http://api.hbdm.com/api/v1/contract_order_detail
 
 # Response
-
 {
-
 "status": "ok",
-
 "data":{
-
 "symbol": "LTC",
-
 "contract_type": "this_week",
-
 "contract_code": "LTC0815",
-
 "volume": 111,
-
 "price": 1111,
-
 "order_price_type": "limit",
-
 "direction": "buy",
-
 "offset": "open",
-
 "status": 1,
-
 "lever_rate": 10,
-
 "trade_avg_price": 10,
-
 "margin_frozen": 10,
-
 "profit": 10,
-
 "order_id": 106837,
-
 "order_source": "web",
-
 "created_at": 1408076414000,
-
 "trades":[
-
 {
-
 trade_id:112,
-
 trade_volume:1,
-
 trade_price:123.4555,
-
 trade_fee:0.234,
-
 trade_turnover:34.123
-
 created_at": 1490759594752
-
 },
-
 {
-
 .........
-
 }
-
 ],
-
 "total_page":15,
-
 "total_size":3，
-
 "current_page":3
-
 },
-
 "ts": 1490759594752
-
 }
-
 错误:
-
 {
-
 "status":error,
-
 "err_code":20029,
-
 "err_msg": "invalid symbol"，
-
 "ts": 1490759594752
-
 }
 ```
 #### 获取合约当前未成交委托 
@@ -1876,73 +1287,39 @@ POST http:///www.hbdm.com/api/v1/contract_openorders
 # Response
 
 {
-
 "status": "ok",
-
 "data":{
-
 "orders":[
-
 {
-
 "symbol": "LTC",
-
 "contract_type": "this_week",
-
 "contract_code": "LTC0815",
-
 "volume": 111,
-
 "price": 1111,
-
 "order_price_type": "market",
-
 "direction": "buy",
-
 "offset": "open",
-
 "lever_rate": 10,
-
 "order_id": 106837,
-
 "client_order_id": 10683,
-
 "order_source": "web",
-
 "created_at": 1408076414000,
-
 "trade_volume": 1,
-
 "trade_turnover": 1200,
-
 "fee": 0,
-
 "trade_avg_price": 10,
-
 "margin_frozen": 10,
-
 "status": 1
-
 },
-
 {
-
 .........
-
 }
-
 ],
-
 "total_page":15,
-
 "current_page":3,
-
 "total_size":3
-
 }
-
 "ts": 1490759594752
-
 }
 ```
 #### 获取合约历史委托
@@ -2001,75 +1378,40 @@ URL /v1/contract_hisorders
 POST http://api.hbdm.com/api/v1/contract_tradeorders
 
 # Response
-
 {
-
 "status": "ok",
-
 "data":{
-
 "orders":[
-
 {
-
 "symbol": "LTC",
-
 "contract_type": "this_week",
-
 "contract_code": "LTC0815",
-
 "volume": 111,
-
 "price": 1111,
-
 "order_price_type": "market",
-
 "direction": "buy",
-
 "offset": "open",
-
 "lever_rate": 10,
-
 "order_id": 106837,
-
 "client_order_id": 10683,
-
 "order_source": "web",
-
 "created_at": 1408076414000,
-
 "trade_volume": 1,
-
 "trade_turnover": 1200,
-
 "fee": 0,
-
 "trade_avg_price": 10,
-
 "margin_frozen": 10,
-
 "profit": 10,
-
 "status": 1
-
 },
-
 {
-
 .........
-
 }
-
 ],
-
 "total_page":15,
-
 "current_page":3,
-
 "total_size":3
-
 }
-
 "ts": 1490759594752
 
 }
@@ -2088,9 +1430,7 @@ Websocket API
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
 ```
 {
-
 "sub": "market.\$symbol.kline.\$period",
-
 "id": "id generate by client"
 
 }
@@ -2103,77 +1443,47 @@ Websocket API
 正确订阅请求参数的例子：
 ```
 {
-
 "sub": "market.BTC_CQ.kline.1min",
-
 "id": "id1"
-
 }
 ```
 订阅成功返回数据的例子
 ```
 {
-
 "id": "id1",
-
 "status": "ok",
-
 "subbed": "market.BTC_CQ.kline.1min",
-
 "ts": 1489474081631
-
 }
 ```
 之后每当 KLine 有更新时，client 会收到数据，例子
 ```
 {
-
 "ch": "market.BTC_CQ.kline.1min",
-
 "ts": 1489474082831,
-
 "tick": {
-
 "id": 1489464480,
-
 "vol": 100,
-
 "count": 0,
-
 "open": 7962.62,
-
 "close": 7962.62,
-
 "low": 7962.62,
-
 "high": 7962.62,
-
 "amount": 0.3 //单位BTC 币种的数量
-
 }
-
 }
 
 tick 说明
 
 "tick": {
-
 "id": K线id,
-
 "vol": 成交量张数,
-
 "count": 成交笔数,
-
 "open": 开盘价,
-
 "close": 收盘价,当K线为最晚的一根时，是最新成交价
-
 "low": 最低价,
-
 "high": 最高价,
-
 //"amount": 成交额, 即 sum(每一笔成交价 \* 该笔的成交量)
-
 "amount": BTC, 即 sum(每一笔 该合约面值\* 该笔的成交量/成交价)
 
 }
@@ -2183,53 +1493,35 @@ tick 说明
 错误订阅(错误的 symbol)
 ```
 {
-
 "sub": "market.invalidsymbol.kline.1min",
-
 "id": "id2"
-
 }
 ```
 订阅失败返回数据的例子
 ```
 {
-
 "id": "id2",
-
 "status": "error",
-
 "err-code": "bad-request",
-
 "err-msg": "invalid topic market.invalidsymbol.kline.1min",
-
 "ts": 1494301904959
-
 }
 ```
 错误订阅(错误的 topic)
 ```
 {
-
 "sub": "market.BTC_CQ.kline.3min",
-
 "id": "id3"
-
 }
 ```
 订阅失败返回数据的例子
 ```
 {
-
 "id": "id3",
-
 "status": "error",
-
 "err-code": "bad-request",
-
 "err-msg": "invalid topic market.BTC_CQ.kline.3min",
-
 "ts": 1494310283622
-
 }
 ```
 #### 请求 KLine 数据
@@ -2237,14 +1529,10 @@ tick 说明
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
 ```
 {
-
 "req": "market.\$symbol.kline.\$period",
-
 "id": "id generated by client",
-
 "from": "optional, type: long, 2017-07-28T00:00:00+08:00 至
 2050-01-01T00:00:00+08:00 之间的时间点，单位：秒",
-
 "to": "optional, type: long, 2017-07-28T00:00:00+08:00 至
 2050-01-01T00:00:00+08:00 之间的时间点，单位：秒，必须比 from 大"}
 ```
@@ -2256,19 +1544,12 @@ tick 说明
 [t1, t5] 假设有 t1 \~ t5 的K线：
 
 from: t1, to: t5, return [t1, t5].
-
 from: t5, to: t1, which t5 \> t1, return [].
-
 from: t5, return [t5].
-
 from: t3, return [t3, t5].
-
 to: t5, return [t1, t5].
-
 from: t which t3 \< t \<t4, return [t4, t5].
-
 to: t which t3 \< t \<t4, return [t1, t3].
-
 from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 ```
 **备注：**一次最多300条
@@ -2276,9 +1557,7 @@ from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 请求 KLine 数据请求参数的例子：
 ```
 {
-
 "req": "market.BTC_CQ.kline.1min",
-
 "id": "id4"
 
 }
@@ -2286,59 +1565,33 @@ from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 请求成功返回数据的例子：
 ```
 {
-
 "rep": "market.BTC_CQ.kline.1min",
-
 "status": "ok",
-
 "id": "id4",
-
 "tick": [
-
 {
-
 "vol": 100,
-
 "count": 27,
-
 "id": 1494478080,
-
 "open": 10050.00,
-
 "close": 10058.00,
-
 "low": 10050.00,
-
 "high": 10058.00,
-
 "amount": 175798.757708
-
 },
 
 {
-
 "vol": 300,
-
 "count": 28,
-
 "id": 1494478140,
-
 "open": 10058.00,
-
 "close": 10060.00,
-
 "low": 10056.00,
-
 "high": 10065.00,
-
 "amount": 158331.348600
-
 },
-
 // more KLine data here
-
 ]
-
 }
 ```
 #### 订阅 Market Depth 数据 
@@ -2346,9 +1599,7 @@ from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
 ```
 {
-
 "sub": "market.\$symbol.depth.\$type",
-
 "id": "id generated by client"
 
 }
@@ -2363,85 +1614,50 @@ from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 正确订阅请求参数的例子：
 ```
 {
-
 "sub": "market.BTC_CQ.depth.step0",
-
 "id": "id5"
-
 }
 ```
 订阅成功返回数据的例子：
 ```
 {
-
 "id": "id5",
-
 "status": "ok",
-
 "subbed": "market.BTC_CQ.depth.step0",
-
 "ts": 1489474081631
-
 }
 ```
 之后每当 depth 有更新时，client 会收到数据，例子：
 ```
 {
-
 "ch": "market.BTC_CQ.depth.step0",
-
 "ts": 1489474082831,
-
 "tick": {
-
 "bids": [
-
 [9999.9101,1], // [price, vol]
-
 [9992.3089,2],
-
 // more Market Depth data here
-
 ]
-
 "asks": [
-
 [10010.9800,10]
-
 [10011.3900,15]
-
 //more data here
-
 ]
-
 }
-
 }
 
 tick 说明：
-
 "tick": {
-
 "bids": [
-
 [买1价,买1量]
-
 [买2价,买2量]
-
 //more data here
-
 ]
-
 "asks": [
-
 [卖1价,卖1量]
-
 [卖2价,卖2量]
-
 //more data here
-
 ]
-
 }
 ```
 #### 请求 Market Depth 数据 
@@ -2449,11 +1665,8 @@ tick 说明：
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
 ```
 {
-
 "req": "market.\$symbol.depth.\$type",
-
 "id": "3123213324"
-
 }
 ```
 | **参数名称** | **是否必须** | **类型** | **描述**   | **默认值** | **取值范围**                                 |
@@ -2464,47 +1677,28 @@ tick 说明：
 请求 Market Depth 数据请求参数的例子：
 ```
 {
-
 "req": "market.BTC_CQ.depth.step0",
-
 "id": "id6"
-
 }
 ```
 请求成功返回数据的例子：
 ```
 {
-
 "rep": "market. BTC_CQ.depth.step0",
-
 "status": "ok",
-
 "id": "id6",
-
 "tick": {
-
 "bids": [
-
 [9999.9800,1], // [price, vol]
-
 [9992.9800,3],
-
 // more Market Depth data here
-
 ]
-
 "asks": [
-
 [10010.9800,1]
-
 [10011.3900,5]
-
 //more data here
-
 ]
-
 }
-
 }
 ```
 #### 订阅 Trade Detail 数据 
@@ -2512,11 +1706,8 @@ tick 说明：
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
 ```
 {
-
 "sub": "market.\$symbol.trade.detail",
-
 "id": "id generated by client"
-
 }
 ```
 **备注：**仅能获取最近 300 个 Trade Detail 数据。
@@ -2528,103 +1719,61 @@ tick 说明：
 正确订阅请求参数的例子：
 ```
 {
-
 "sub": "market.BTC_CQ.trade.detail",
-
 "id": "id7"
-
 }
 ```
 订阅成功返回数据的例子：
 ```
 {
-
 "id": "id7",
-
 "status": "ok",
-
 "subbed": "market.BTC_CQ.trade.detail",
-
 "ts": 1489474081631
-
 }
 ```
 之后每当 Trade Detail 有更新时，client 会收到数据，例子：
 ```
 {
-
 "ch": "market.BTC_CQ.trade.detail",
-
 "ts": 1489474082831,
-
 "data": [
-
 {
-
 "id": 601595424,
-
 "price": 10195.64,
-
 "time": 1494495766,
-
 "amount": 100,
-
 "direction": "buy",
-
 "tradeId": 601595424,
-
 "ts": 1494495766000
-
 },
 
 {
-
 "id": 601595423,
-
 "price": 10195.64,
-
 "time": 1494495711,
-
 "amount": 200,
-
 "direction": "buy",
-
 "tradeId": 601595423,
-
 "ts": 1494495711000
-
 },
-
 // more Trade Detail data here
-
 ]
-
 }
-
 }
 ```
 data 说明：
 ```
 "data": [
-
 {
-
 "id": 消息ID,
-
 "price": 成交价,
-
 "time": 成交时间,
-
 "amount": 成交量（张）,
-
 "direction": 成交方向,
-
 "tradeId": 成交ID,
-
 "ts": 时间戳
-
 }
-
 ]
 ```
 **成交量(张)amount说明:**
@@ -2636,11 +1785,8 @@ data 说明：
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
 ```
 {
-
 "req": "market.\$symbol.detail",
-
 "id": "id generated by client"
-
 }
 ```
 | **参数名称** | **是否必须** | **类型** | **描述** | **默认值** | **取值范围**                                 |
@@ -2652,69 +1798,41 @@ data 说明：
 请求 Market Detail 数据请求参数的例子：
 ```
 {
-
 "req": "market.BTC_CQ.detail",
-
 "id": "id8"
-
 }
 ```
 请求成功返回数据的例子：
 ```
 {
-
 "rep": "d",
-
 "status": "ok",
-
 "id": "id8",
-
 "tick": {
-
 "vol": 1000,
-
 "open": 9790.52,
-
 "close": 10195.00,
-
 "high": 10300.00,
-
 "ts": 1494496390000,
-
 "id": 1494496390,
-
 "count": 15195,
-
 "low": 9657.00,
-
 "amount": 12190.754751
-
 }
-
 }
 ```
 tick数据说明：
 ```
 "tick": {
-
 "id": K线id,
-
 "ts": 1494496390000,
-
 "vol": 成交量(张),
-
 "count": 成交笔数,
-
 "open": 开盘价,
-
 "close": 收盘价,当K线为最晚的一根时，是最新成交价
-
 "low": 最低价,
-
 "high": 最高价,
-
 "amount": 成交量(币), 即 sum(每一笔成交量(张)\*单张合约面值/该笔成交价)
-
 }
 ```
 
