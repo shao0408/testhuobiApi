@@ -13,9 +13,9 @@ public class HbdmClient {
 			/**
 			 *  get请求无需发送身份认证,通常用于获取行情，市场深度等公共信息
 			 */
-		  	String api_key = "";  
-	       	String secret_key = "";  
-	 	    String url_prex = "http://api.hbdm.com";
+			String api_key="6330ccf2-3ef30e50-82542b82-81bfa";  //huobi申请的apiKey
+			String secret_key = "65c24e2b-5110379b-2fd136f6-80331";  //huobi申请的secretKey
+			String url_prex = "http://api.hbdm.com";
 			IHbdmRestApi futureGetV1 = new HbdmRestApiV1(url_prex);
 			IHbdmRestApi futurePostV1 = new HbdmRestApiV1(url_prex, api_key,secret_key);
 
@@ -87,7 +87,7 @@ public class HbdmClient {
 			logger.info("获取订单明细信息"+openorders);
 			
 			// 获取合约历史委托
-			String orderDetail=futureGetV1.future_contract_hisorders("BTC","0","1","0","90","1","20");
+			String orderDetail=futurePostV1.future_contract_hisorders("BTC","0","1","0","90","1","20");
 			logger.info("获取订单明细信息"+orderDetail);
 	}
 
