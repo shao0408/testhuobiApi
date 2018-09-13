@@ -3,25 +3,25 @@
 
 | **接口数据类型**      | **请求方法** | **类型** | **描述**|   **需要验签**| 
 | ------------- | -------- | ------ | ----------------------------------- |-------- |
-| 市场接口 |  <a href="#1">/v1/contract_contract_info </a>        | GET | 获取合约信息               |   |
-| 市场接口 |  <a href="#2">/v1/contract_index </a>                | GET | 获取合约指数信息           |   |
-| 市场接口 |  <a href="#3"> /v1/contract_price_limit </a>         | GET | 获取合约最高限价和最低限价 |   |
-| 市场接口 |  <a href="#4"> /v1/contract_open_interest</a>         | GET | 获取当前可用合约总持仓量 |   |
-| 市场接口|   <a href="#5"> /market/depth </a>         | GET |获取行情深度数据  |   |
-| 市场接口 |  <a href="#6">/market/history/kline  </a>         | GET | 获取K线数据 |   |
-| 市场接口 |  <a href="#7"> /market/detail/merged </a>         | GET | 获取聚合行情 |   |
-| 市场接口 |  <a href="#8"> /market/trade </a>         | GET | 获取市场最近成交记录 |   |
-| 市场接口 |  <a href="#9">/market/history/trade  </a>         | GET | 批量获取最近的交易记录 |   |
-| 资产接口 |  <a href="#101"> /v1/contract_account_info </a>         | POST |获取用户账户信息  |   |
-| 资产接口 |  <a href="#102">/v1/contract_position_info  </a>         | POST |获取用户持仓信息  |   |
-| 交易接口 |  <a href="#103"> /v1/contract_order </a>         | GET | 合约下单 |   |
-| 交易接口 |  <a href="#104">/v1/contract_batchorder   </a>   | POST |合约批量下单  |   |
-| 交易接口 |  <a href="#105">/v1/contract_cancel </a>         | POST |撤销订单  |   |
-| 交易接口 |  <a href="#106">/v1/contract_cancelall  </a>         | GET |全部撤单  |   |
-| 交易接口 |  <a href="#107">/v1/contract_order_info  </a>         | POST | 获取合约订单信息 |   |
-| 交易接口 |  <a href="#108"> /v1/contract_order_detail  </a>         | POST |获取订单明细信息  |   |
-| 交易接口 |  <a href="#109"> /v1/contract_openorders  </a>         | POST | 获取合约当前未成交委托 |   |
-| 交易接口 |  <a href="#110"> /v1/contract_hisorders  </a>         | POST |获取合约历史委托  |   |
+| 市场接口 |  <a href="#1">/v1/contract_contract_info </a>        | GET | 获取合约信息               | 否  |
+| 市场接口 |  <a href="#2">/v1/contract_index </a>                | GET | 获取合约指数信息           |  否 |
+| 市场接口 |  <a href="#3"> /v1/contract_price_limit </a>         | GET | 获取合约最高限价和最低限价 | 否  |
+| 市场接口 |  <a href="#4"> /v1/contract_open_interest</a>         | GET | 获取当前可用合约总持仓量 |否   |
+| 市场接口|   <a href="#5"> /market/depth </a>         | GET |获取行情深度数据  |否   |
+| 市场接口 |  <a href="#6">/market/history/kline  </a>         | GET | 获取K线数据 |否   |
+| 市场接口 |  <a href="#7"> /market/detail/merged </a>         | GET | 获取聚合行情 |否   |
+| 市场接口 |  <a href="#8"> /market/trade </a>         | GET | 获取市场最近成交记录 | 否  |
+| 市场接口 |  <a href="#9">/market/history/trade  </a>         | GET | 批量获取最近的交易记录 | 否  |
+| 资产接口 |  <a href="#101"> /v1/contract_account_info </a>         | POST |获取用户账户信息  | 是  |
+| 资产接口 |  <a href="#102">/v1/contract_position_info  </a>         | POST |获取用户持仓信息  | 是  |
+| 交易接口 |  <a href="#103"> /v1/contract_order </a>         | POST | 合约下单 | 是  |
+| 交易接口 |  <a href="#104">/v1/contract_batchorder   </a>   | POST |合约批量下单  |   是|
+| 交易接口 |  <a href="#105">/v1/contract_cancel </a>         | POST |撤销订单  | 是  |
+| 交易接口 |  <a href="#106">/v1/contract_cancelall  </a>         | POST |全部撤单  |是   |
+| 交易接口 |  <a href="#107">/v1/contract_order_info  </a>         | POST | 获取合约订单信息 | 是  |
+| 交易接口 |  <a href="#108"> /v1/contract_order_detail  </a>         | POST |获取订单明细信息  | 是  |
+| 交易接口 |  <a href="#109"> /v1/contract_openorders  </a>         | POST | 获取合约当前未成交委托 | 是  |
+| 交易接口 |  <a href="#110"> /v1/contract_hisorders  </a>         | POST |获取合约历史委托  | 是  |
 
 
 
