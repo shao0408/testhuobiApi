@@ -1,9 +1,5 @@
 package com.huobi.common.exception;
 
-/**
- * @author zhangl
- * @since 2018/6/26
- */
 public class HttpRequestException extends RuntimeException{
 
     public HttpRequestException() {

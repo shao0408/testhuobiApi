@@ -3,7 +3,7 @@ package com.huobi.common.api;
 public class HbdmSignature {
 	private String accessKey;
 	private String secretKey;
-	
+
 	public HbdmSignature() {
 		super();
 	}
