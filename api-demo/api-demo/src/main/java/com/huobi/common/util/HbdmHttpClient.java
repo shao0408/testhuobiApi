@@ -1,8 +1,6 @@
 package com.huobi.common.util;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -16,7 +14,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.huobi.common.exception.HttpRequestException;
 
 import okhttp3.ConnectionPool;
-import okhttp3.Credentials;
 import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
@@ -33,27 +30,15 @@ public class HbdmHttpClient {
 
 	static final MediaType JSON_TYPE = MediaType.parse("application/json");
 
-	private HbdmHttpClient(ProxyConfig proxyConfig) {
+	private HbdmHttpClient() {
 		OkHttpClient.Builder builder = new OkHttpClient.Builder()
 				.connectionPool(new ConnectionPool(200, 10, TimeUnit.SECONDS)).connectTimeout(3, TimeUnit.SECONDS)
 				.readTimeout(5, TimeUnit.SECONDS);
-		if (proxyConfig == null) {
-			httpClient = builder.build();
-		} else {
-			builder.proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.huobidev.com", 3129)));
-			if (proxyConfig.getUsername() != null && proxyConfig.getPassword() != null) {
-				builder.authenticator((route, response) -> {
-					String credential = Credentials.basic(proxyConfig.getUsername(), proxyConfig.getPassword());
-					return response.request().newBuilder().header("Proxy-Authorization", credential).build();
-				});
-			}
-			httpClient = builder.build();
-		}
-
+		httpClient = builder.build();
 	}
 
-	public static HbdmHttpClient getInstance(ProxyConfig proxyConfig) {
-		return new HbdmHttpClient(proxyConfig);
+	public static HbdmHttpClient getInstance() {
+		return new HbdmHttpClient();
 	}
 
 	public String doGet(String url, Map<String, String> params) {

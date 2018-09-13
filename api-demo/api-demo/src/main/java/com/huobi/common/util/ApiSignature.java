@@ -47,8 +47,8 @@ public class ApiSignature {
 			Map<String, String> params) {
 		StringBuilder sb = new StringBuilder(1024);
 		int index = uri.indexOf(".com");
-		int index2 = uri.indexOf("http://");
-		String host = uri.substring(index2 + 7, index + 4);
+		int index2 = uri.indexOf("//");
+		String host = uri.substring(index2 + 2, index + 4);
 		String constant = uri.substring(index + 4, uri.length());
 		sb.append(method.toUpperCase()).append('\n') // GET
 				.append(host.toLowerCase()).append('\n') // Host

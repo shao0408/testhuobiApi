@@ -1,10 +1,14 @@
 package com.huobi.common.api;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.http.HttpException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.huobi.common.request.Order;
 
 public class HbdmClient {
 	private static Logger logger = LoggerFactory.getLogger(HbdmClient.class);
@@ -67,6 +71,15 @@ public class HbdmClient {
 				"buy", "open", "10", "limit");
 
 		logger.info("合约下单返回" + contractOrder);
+		
+		//批量下单
+		List<Order> orders = new ArrayList<>();
+		Order order1 = new Order("BTC", "this_week", "BTC180914", "", "6759", "12","buy", "open", "10", "limit");
+		Order order2 = new Order("BTC", "next_week", "BTC180921", "", "6759", "12","buy", "open", "10", "limit");
+		orders.add(order1);
+		orders.add(order2);
+		String futureContractBatchOorder = futurePostV1.future_contract_batchorder(orders);
+		logger.info("批量下单返回" + futureContractBatchOorder);
 
 		// 合约取消订单
 		String contractcancel = futurePostV1.future_contract_cancel("123556", "");

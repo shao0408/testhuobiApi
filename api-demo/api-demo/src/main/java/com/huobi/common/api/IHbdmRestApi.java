@@ -181,7 +181,7 @@ public interface IHbdmRestApi {
 			throws HttpException, IOException;
 
 	/**
-	 * 获取用户订单信息
+	 * 批量下单
 	 * 
 	 * @param symbol
 	 *            "BTC","ETH"...
@@ -282,7 +282,7 @@ public interface IHbdmRestApi {
 	 * @param tradeType
 	 *            0:全部,1:买入开多,2: 卖出开空,3: 买入平空,4: 卖出平多,5: 卖出强平,6: 买入强平,7:交割平多,8: 交割平空
 	 * @param type
-	 *            :所有订单、2：结束汏订单
+	 *            1:所有订单，2：已结束订单
 	 * @param status
 	 *            0:全部,3:未成交, 4: 部分成交,5: 部分成交已撤单,6: 全部成交,7:已撤单 createDate
 	 *            7，90（7天或者90天）

@@ -13,6 +13,25 @@ public class Order {
 	public String leverRate;
 	public String orderPriceType;
 
+	public Order(String symbol, String contractType, String contractCode, String clientOrderId, String price,
+			String volume, String direction, String offset, String leverRate, String orderPriceType) {
+		super();
+		this.symbol = symbol;
+		this.contractType = contractType;
+		this.contractCode = contractCode;
+		this.clientOrderId = clientOrderId;
+		this.price = price;
+		this.volume = volume;
+		this.direction = direction;
+		this.offset = offset;
+		this.leverRate = leverRate;
+		this.orderPriceType = orderPriceType;
+	}
+
+	public Order() {
+		super();
+	}
+
 	public String getSymbol() {
 		return symbol;
 	}

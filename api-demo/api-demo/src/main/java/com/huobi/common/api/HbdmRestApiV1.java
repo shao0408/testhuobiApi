@@ -8,6 +8,7 @@ import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpException;
 
+import com.alibaba.fastjson.JSON;
 import com.huobi.common.request.Order;
 import com.huobi.common.util.HbdmHttpClient;
 
@@ -74,7 +75,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("contract_code", contractCode);
 		}
-		String contractinfoRes = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_CONTRACT_INFO, params);
+		String contractinfoRes = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_CONTRACT_INFO, params);
 		return contractinfoRes;
 	}
 
@@ -84,7 +85,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
 		}
-		String contractindexRes = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_CONTRACT_INDEX,
+		String contractindexRes = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_CONTRACT_INDEX,
 				params);
 		return contractindexRes;
 	}
@@ -102,7 +103,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("contract_code", contractCode);
 		}
-		String contractinfoRes = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_CONTRACT_PRICE_LIMIT,
+		String contractinfoRes = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_CONTRACT_PRICE_LIMIT,
 				params);
 		return contractinfoRes;
 	}
@@ -120,7 +121,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("contract_code", contractCode);
 		}
-		String contractinfoRes = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_CONTRACT_OPEN_INTEREST,
+		String contractinfoRes = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_CONTRACT_OPEN_INTEREST,
 				params);
 		return contractinfoRes;
 	}
@@ -133,7 +134,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(type)) {
 			params.put("type", type);
 		}
-		String contractinfoRes = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_DEPTH, params);
+		String contractinfoRes = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_DEPTH, params);
 		return contractinfoRes;
 	}
 
@@ -145,7 +146,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(period)) {
 			params.put("period", period);
 		}
-		String res = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_KLINE, params);
+		String res = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_KLINE, params);
 		return res;
 	}
 
@@ -154,7 +155,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
 		}
-		String res = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_TICKER, params);
+		String res = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_TICKER, params);
 		return res;
 	}
 
@@ -166,7 +167,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(size)) {
 			params.put("size", size);
 		}
-		String res = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_TRADE, params);
+		String res = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_TRADE, params);
 		return res;
 	}
 
@@ -178,7 +179,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(size)) {
 			params.put("size", size);
 		}
-		String res = HbdmHttpClient.getInstance(null).doGet(url_prex + HUOBI_FUTURE_TRADE, params);
+		String res = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_TRADE, params);
 		return res;
 	}
 
@@ -188,7 +189,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 			params.put("symbol", symbol);
 		}
 
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_ACCOUNT_INFO, params, new HashMap<>());
 		return res;
 	}
@@ -199,7 +200,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 			params.put("symbol", symbol);
 		}
 
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_POSITION_INFO, params, new HashMap<>());
 		return res;
 	}
@@ -239,14 +240,15 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(orderPriceType)) {
 			params.put("orderPriceType", orderPriceType);
 		}
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST", url_prex + HUOBI_FUTURE_ORDER,
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST", url_prex + HUOBI_FUTURE_ORDER,
 				params, new HashMap<>());
 		return res;
 	}
 
 	public String future_contract_batchorder(List<Order> orders) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST", url_prex + HUOBI_FUTURE_ORDER,
+		params.put("orders_data", JSON.toJSONString(orders));
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST", url_prex + HUOBI_FUTURE_ORDER,
 				params, new HashMap<>());
 		return res;
 	}
@@ -260,7 +262,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 			params.put("client_order_id", clientOrderId);
 		}
 
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_ORDER_CANCEL, params, new HashMap<>());
 		return res;
 	}
@@ -271,7 +273,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 			params.put("symbol", symbol);
 		}
 
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_ORDER_CANCEL_ALL, params, new HashMap<>());
 		return res;
 	}
@@ -285,7 +287,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 			params.put("client_order_id", clientOrderId);
 		}
 
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_ORDER_CANCEL, params, new HashMap<>());
 		return res;
 	}
@@ -305,7 +307,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(pageSize)) {
 			params.put("page_size", pageSize);
 		}
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_CONTRACT_ORDER_DETAIL, params, new HashMap<>());
 		return res;
 	}
@@ -322,7 +324,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(pageSize)) {
 			params.put("page_size", pageSize);
 		}
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_CONTRACE_OPENORDERS, params, new HashMap<>());
 		return res;
 	}
@@ -351,7 +353,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(pageSize)) {
 			params.put("page_size", pageSize);
 		}
-		String res = HbdmHttpClient.getInstance(null).call(api_key, secret_key, "POST",
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_CONTRACT_HISORDERS, params, new HashMap<>());
 		return res;
 	}
