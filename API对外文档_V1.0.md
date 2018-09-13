@@ -42,11 +42,11 @@ URL /v1/contract_contract_info
 
 | **参数名称**      | **参数类型** | **必填** | **描述**                                   |
 | ------------- | -------- | ------ | ---------------------------------------- |
-| symbol        | string   | 否      | "BTC","ETH"...                           |
-| contract_type | string   | 否      | 合约类型: this_week:当周 next_week:下周 quarter:季度 |
-| contract_code | string   | 否      | BTC1403                                  |
+| symbol        | string   | false      | "BTC","ETH"...                           |
+| contract_type | string   | false      | 合约类型: this_week:当周 next_week:下周 quarter:季度 |
+| contract_code | string   | false      | BTC1403                                  |
 
-备注：如果contract_code填了值，那就按照contract_code去查询，如果contract_code
+**备注**：如果contract_code填了值，那就按照contract_code去查询，如果contract_code
 
 没有填值，则按照symbol+contract_type去查询
 
@@ -71,6 +71,7 @@ URL /v1/contract_contract_info
 ```
 GET http://api.hbdm.com/api/v1/contract_contract_info
 
+# Response
 {
   "status": "ok",
   "data": [
@@ -109,7 +110,7 @@ URL  /v1/contract_index
 
 | **参数名称** | **参数类型** | **必填** | **描述**         |
 | -------- | -------- | ------ | -------------- |
-| symbol   | string   | 是      | "BTC","ETH"... |
+| symbol   | string   | true      | "BTC","ETH"... |
 
 **返回参数**
 
@@ -146,11 +147,11 @@ URL /v1/contract_price_limit
 
 | **参数名称**      | **参数类型** | **必填** | **描述**                                   |
 | ------------- | -------- | ------ | ---------------------------------------- |
-| symbol        | string   | 否      | "BTC","ETH"...                           |
-| contract_type | string   | 否      | 合约类型: 当周"this_week", 次周"next_week", 季度"quarter" |
-| contract_code | string   | 否      | BTC1403                                  |
+| symbol        | string   | false      | "BTC","ETH"...                           |
+| contract_type | string   | false      | 合约类型: 当周"this_week", 次周"next_week", 季度"quarter" |
+| contract_code | string   | false      | BTC1403                                  |
 
-备注：如果contract_code填了值，那就按照contract_code去查询，如
+**备注**：如果contract_code填了值，那就按照contract_code去查询，如
 contract_code没有填值，
 
 则按照symbol+contract_type去查询，两个查询条件必填一个
@@ -195,9 +196,9 @@ URL /v1/contract_open_interest
 
 | **参数名称**      | **参数类型** | **必填** | **描述**                                   |
 | ------------- | -------- | ------ | ---------------------------------------- |
-| symbol        | string   | 否      | "BTC","ETH"...                           |
-| contract_type | string   | 否      | 合约类型: 当周"this_week", 次周"next_week", 季度"quarter" |
-| contract_code | string   | 否      | BTC1403                                  |
+| symbol        | string   | false      | "BTC","ETH"...                           |
+| contract_type | string   | false      | 合约类型: 当周"this_week", 次周"next_week", 季度"quarter" |
+| contract_code | string   | false      | BTC1403                                  |
 
 **返回参数**
 
@@ -239,8 +240,8 @@ URL /market/depth
 
 | **参数名称** | **参数类型** | **必填** | **描述**                                   |
 | -------- | -------- | ------ | ---------------------------------------- |
-| symbol   | string   | 是      | 如"BTC_CW"表示BTC当周合约，"BTC_NW"表示BTC次周合约，"BTC_CQ"表示BTC季度合约 |
-| type     | string   | 是      | step0, step1, step2, step3, step4, step5（合并深度0-5）；step0时，不合并深度 |
+| symbol   | string   | true      | 如"BTC_CW"表示BTC当周合约，"BTC_NW"表示BTC次周合约，"BTC_CQ"表示BTC季度合约 |
+| type     | string   | true      | step0, step1, step2, step3, step4, step5（合并深度0-5）；step0时，不合并深度 |
 
 **返回参数**
 
@@ -575,9 +576,9 @@ GET  http:///www.hbdm.com/api/v1
 资产接口
 --------
 
-#### <a name="#101"> 获取用户账户信息</a>
+#### <a name="101"> 获取用户账户信息</a>
 
-URL [/v1/contract_account_info](http://www.huobiapps.com/api/v1/contract_account_info)
+URL  /v1/contract_account_info 
 
 **请求参数**
 
@@ -611,17 +612,6 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
 {
   "status": "ok",
   "data": [
-    {
-      "symbol": "BTC",
-      "margin_balance": 1,
-      "margin_position": 0,
-      "margin_frozen": 3.33,
-      "margin_available": 0.34,
-      "profit_real": 3.45,
-      "profit_unreal": 7.45,
-      "risk_rate": 100,
-      "liquidation_price": 100
-     },
     {
       "symbol": "BTC",
       "margin_balance": 1,
@@ -723,18 +713,18 @@ URL /v1/contract_order
 
 | **参数名**          | **参数类型** | **必填** | **描述**                                   |
 | ---------------- | -------- | ------ | ---------------------------------------- |
-| symbol           | string   | 否      | "BTC","ETH"...                           |
-| contract_type    | string   | 否      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
-| contract_code    | string   | 否      | BTC1403                                  |
-| client_order_id  | long     | 是      | 客户自己填写和维护，这次一定要大于上一次                     |
-| price            | decimal  | 是      | 价格                                       |
-| volume           | long     | 是      | 委托数量(张)                                  |
-| direction        | string   | 是      | "buy":买 "sell":卖                         |
-| offset           | string   | 是      | "open":开 "close":平                       |
-| lever_rate       | int      | 是      | 杠杆倍数[“开仓”若有10倍多单，就不能再下20倍多单]             |
-| order_price_type | string   | 是      | "limit":限价 "opponent":对手价                |
+| symbol           | string   | false      | "BTC","ETH"...                           |
+| contract_type    | string   | false      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
+| contract_code    | string   | false      | BTC1403                                  |
+| client_order_id  | long     | true      | 客户自己填写和维护，这次一定要大于上一次                     |
+| price            | decimal  | true      | 价格                                       |
+| volume           | long     | true      | 委托数量(张)                                  |
+| direction        | string   | true      | "buy":买 "sell":卖                         |
+| offset           | string   | true      | "open":开 "close":平                       |
+| lever_rate       | int      | true      | 杠杆倍数[“开仓”若有10倍多单，就不能再下20倍多单]             |
+| order_price_type | string   | true      | "limit":限价 "opponent":对手价                |
 
-**备注：**如果contract_code填了值，那就按照contract_code去下单，如果contract_code没有填值，则按照symbol+contract_type去下单。
+**备注**：如果contract_code填了值，那就按照contract_code去下单，如果contract_code没有填值，则按照symbol+contract_type去下单。
 
 **返回参数**
 
@@ -766,19 +756,19 @@ URL /v1/contract_batchorder
 | **参数名**                     | **参数类型** | **必填** | **描述**                                   |
 | --------------------------- | -------- | ------ | ---------------------------------------- |
 | \<list\>(属性名称: orders_data) |          |        |                                          |
-| symbol                      | string   | 否      | "BTC","ETH"...                           |
-| contract_type               | string   | 否      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
-| contract_code               | string   | 否      | BTC1403                                  |
-| client_order_id             | long     | 是      | 客户自己填写和维护，这次一定要大于上一次                     |
-| price                       | decimal  | 是      | 价格                                       |
-| volume                      | long     | 是      | 委托数量(张)                                  |
-| direction                   | string   | 是      | "buy":买 "sell":卖                         |
-| offset                      | string   | 是      | "open":开 "close":平                       |
-| lever_rate                  | int      | 是      | 杠杆倍数[“开仓”若有10倍多单，就不能再下20倍多单]             |
-| order_price_type            | string   | 是      | "limit":限价 "opponent":对手价                |
+| symbol                      | string   | false      | "BTC","ETH"...                           |
+| contract_type               | string   | false      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
+| contract_code               | string   | false      | BTC1403                                  |
+| client_order_id             | long     | true      | 客户自己填写和维护，这次一定要大于上一次                     |
+| price                       | decimal  | true      | 价格                                       |
+| volume                      | long     | true      | 委托数量(张)                                  |
+| direction                   | string   | true      | "buy":买 "sell":卖                         |
+| offset                      | string   | true      | "open":开 "close":平                       |
+| lever_rate                  | int      | true      | 杠杆倍数[“开仓”若有10倍多单，就不能再下20倍多单]             |
+| order_price_type            | string   | true      | "limit":限价 "opponent":对手价                |
 | \</list\>                   |          |        |                                          |
 
-**备注：**如果contract_code填了值，那就按照contract_code去下单，如果contract_code没有填值，则按照symbol+contract_type去下单。
+**备注**：如果contract_code填了值，那就按照contract_code去下单，如果contract_code没有填值，则按照symbol+contract_type去下单。
 
 **返回参数**
 
@@ -844,7 +834,7 @@ URL /v1/contract_cancel
 | order_id        | false    | string | 订单ID（ 多个订单ID中间以","分隔,一次最多允许撤消50个订单 ） |
 | client_order_id | false    | string | 客户订单ID(多个订单ID中间以","分隔,一次最多允许撤消50个订单) |
 
-**备注：**
+**备注**：
 order_id和client_order_id都可以用来撤单，同时只可以设置其中一种，如果设置了两种，默认以order_id来撤单。
 
 **返回参数**
@@ -956,7 +946,7 @@ URL /v1/contract_order_info
 | order_id        | false    | string | 订单ID（ 多个订单ID中间以","分隔,一次最多允许查询20个订单 ） |
 | client_order_id | false    | string | 客户订单ID(多个订单ID中间以","分隔,一次最多允许查询20个订单) |
 
-**备注：**order_id和client_order_id都可以用来查询，同时只可以设置其中一种，如果设置了两种，默认以order_id来查询。
+**备注**：order_id和client_order_id都可以用来查询，同时只可以设置其中一种，如果设置了两种，默认以order_id来查询。
 
 **返回数据**
 
@@ -1139,7 +1129,7 @@ POST  http://api.hbdm.com/api/v1/contract_order_detail
 ```
 #### <a name="109">获取合约当前未成交委托 </a>
 
-URL  /v1/contract_openorders*
+URL  /v1/contract_openorders
 
 **请求参数**
 
@@ -1323,7 +1313,6 @@ Websocket API
 {
 "sub": "market.\$symbol.kline.\$period",
 "id": "id generate by client"
-
 }
 ```
 | **参数名称** | **是否必须** | **类型** | **描述** | **默认值** | **取值范围**                                 |
@@ -1376,9 +1365,7 @@ tick 说明
    "close": 收盘价,当K线为最晚的一根时，是最新成交价
    "low": 最低价,
    "high": 最高价,
-   //"amount": 成交额, 即 sum(每一笔成交价 \* 该笔的成交量)
    "amount": BTC, 即 sum(每一笔 该合约面值\* 该笔的成交量/成交价)
-
 }
 ```
 **错误订阅的列子**
@@ -1443,14 +1430,13 @@ from: t which t3 \< t \<t4, return [t4, t5].
 to: t which t3 \< t \<t4, return [t1, t3].
 from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 ```
-**备注：**一次最多300条
+**备注**：一次最多300条
 
 请求 KLine 数据请求参数的例子：
 ```
 {
 "req": "market.BTC_CQ.kline.1min",
 "id": "id4"
-
 }
 ```
 请求成功返回数据的例子：
@@ -1497,7 +1483,7 @@ from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
 | symbol   | true     | string | 交易对      |         | 如"BTC_CW"表示BTC当周合约，"BTC_NW"表示BTC次周合约，"BTC_CQ"表示BTC季度合约. |
 | type     | true     | string | Depth 类型 |         | step0, step1, step2, step3, step4, step5（合并深度0-5）；step0时，不合并深度 |
 
-备注：用户选择“合并深度”时，一定报价精度内的市场挂单将予以合并显示。合并深度仅改变显示方式，不改变实际成交价格。
+**备注**：用户选择“合并深度”时，一定报价精度内的市场挂单将予以合并显示。合并深度仅改变显示方式，不改变实际成交价格。
 
 正确订阅请求参数的例子：
 ```
@@ -1575,15 +1561,15 @@ tick 说明：
  "status": "ok",
  "id": "id6",
  "tick": {
- "bids": [
-    [9999.9800,1], 
-    [9992.9800,3]
-  ]
-  "asks": [
-    [10010.9800,1],
-    [10011.3900,5]
-  ]
-}
+   "bids": [
+     [9999.9800,1], 
+     [9992.9800,3]
+    ]
+   "asks": [
+     [10010.9800,1],
+     [10011.3900,5]
+    ]
+  }
 }
 ```
 #### 订阅 Trade Detail 数据 
@@ -1595,7 +1581,7 @@ tick 说明：
 "id": "id generated by client"
 }
 ```
-**备注：**仅能获取最近 300 个 Trade Detail 数据。
+**备注**：仅能获取最近 300 个 Trade Detail 数据。
 
 | **参数名称** | **是否必须** | **类型** | **描述** | **默认值** | **取值范围**                                 |
 | -------- | -------- | ------ | ------ | ------- | ---------------------------------------- |
