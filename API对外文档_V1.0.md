@@ -1,27 +1,36 @@
 接口列表
 --------
 
-| **接口数据类型**      | **请求方法** | **类型** | **描述**|   **需要验签**| 
-| ------------- | -------- | ------ | ----------------------------------- |-------- |
-| 市场接口 |  <a href="#1">/v1/contract_contract_info </a>        | GET | 获取合约信息               | 否  |
-| 市场接口 |  <a href="#2">/v1/contract_index </a>                | GET | 获取合约指数信息           |  否 |
-| 市场接口 |  <a href="#3"> /v1/contract_price_limit </a>         | GET | 获取合约最高限价和最低限价 | 否  |
-| 市场接口 |  <a href="#4"> /v1/contract_open_interest</a>         | GET | 获取当前可用合约总持仓量 |否   |
-| 市场接口|   <a href="#5"> /market/depth </a>         | GET |获取行情深度数据  |否   |
-| 市场接口 |  <a href="#6">/market/history/kline  </a>         | GET | 获取K线数据 |否   |
-| 市场接口 |  <a href="#7"> /market/detail/merged </a>         | GET | 获取聚合行情 |否   |
-| 市场接口 |  <a href="#8"> /market/trade </a>         | GET | 获取市场最近成交记录 | 否  |
-| 市场接口 |  <a href="#9">/market/history/trade  </a>         | GET | 批量获取最近的交易记录 | 否  |
-| 资产接口 |  <a href="#101"> /v1/contract_account_info </a>         | POST |获取用户账户信息  | 是  |
-| 资产接口 |  <a href="#102">/v1/contract_position_info  </a>         | POST |获取用户持仓信息  | 是  |
-| 交易接口 |  <a href="#103"> /v1/contract_order </a>         | POST | 合约下单 | 是  |
-| 交易接口 |  <a href="#104">/v1/contract_batchorder   </a>   | POST |合约批量下单  |   是|
-| 交易接口 |  <a href="#105">/v1/contract_cancel </a>         | POST |撤销订单  | 是  |
-| 交易接口 |  <a href="#106">/v1/contract_cancelall  </a>         | POST |全部撤单  |是   |
-| 交易接口 |  <a href="#107">/v1/contract_order_info  </a>         | POST | 获取合约订单信息 | 是  |
-| 交易接口 |  <a href="#108"> /v1/contract_order_detail  </a>         | POST |获取订单明细信息  | 是  |
-| 交易接口 |  <a href="#109"> /v1/contract_openorders  </a>         | POST | 获取合约当前未成交委托 | 是  |
-| 交易接口 |  <a href="#110"> /v1/contract_hisorders  </a>         | POST |获取合约历史委托  | 是  |
+|接口类型| **接口数据类型**      | **请求方法** | **类型** | **描述**|   **需要验签**| 
+|-------------| ------------- | -------- | ------ | ----------------------------------- |-------- |
+|Restful| 市场接口 |  <a href="#1">/v1/contract_contract_info </a>        | GET | 获取合约信息               | 否  |
+|Restful| 市场接口 |  <a href="#2">/v1/contract_index </a>                | GET | 获取合约指数信息           |  否 |
+|Restful| 市场接口 |  <a href="#3"> /v1/contract_price_limit </a>         | GET | 获取合约最高限价和最低限价 | 否  |
+|Restful| 市场接口 |  <a href="#4"> /v1/contract_open_interest</a>         | GET | 获取当前可用合约总持仓量 |否   |
+|Restful| 市场接口|   <a href="#5"> /market/depth </a>         | GET |获取行情深度数据  |否   |
+|Restful| 市场接口 |  <a href="#6">/market/history/kline  </a>         | GET | 获取K线数据 |否   |
+|Restful| 市场接口 |  <a href="#7"> /market/detail/merged </a>         | GET | 获取聚合行情 |否   |
+|Restful| 市场接口 |  <a href="#8"> /market/trade </a>         | GET | 获取市场最近成交记录 | 否  |
+|Restful| 市场接口 |  <a href="#9">/market/history/trade  </a>         | GET | 批量获取最近的交易记录 | 否  |
+|Restful| 资产接口 |  <a href="#101"> /v1/contract_account_info </a>         | POST |获取用户账户信息  | 是  |
+|Restful| 资产接口 |  <a href="#102">/v1/contract_position_info  </a>         | POST |获取用户持仓信息  | 是  |
+|Restful| 交易接口 |  <a href="#103"> /v1/contract_order </a>         | POST | 合约下单 | 是  |
+|Restful| 交易接口 |  <a href="#104">/v1/contract_batchorder   </a>   | POST |合约批量下单  |   是|
+|Restful| 交易接口 |  <a href="#105">/v1/contract_cancel </a>         | POST |撤销订单  | 是  |
+|Restful| 交易接口 |  <a href="#106">/v1/contract_cancelall  </a>         | POST |全部撤单  |是   |
+|Restful| 交易接口 |  <a href="#107">/v1/contract_order_info  </a>         | POST | 获取合约订单信息 | 是  |
+|Restful| 交易接口 |  <a href="#108"> /v1/contract_order_detail  </a>         | POST |获取订单明细信息  | 是  |
+|Restful| 交易接口 |  <a href="#109"> /v1/contract_openorders  </a>         | POST | 获取合约当前未成交委托 | 是  |
+|Restful| 交易接口 |  <a href="#110"> /v1/contract_hisorders  </a>         | POST |获取合约历史委托  | 是  |
+|签名认证| 认证方式 | <a href="#199"> 认证方式 </a>         |  |认证方式  | 否  |
+|签名认证| 访问次数限制 | <a href="#200"> 访问次数限制 </a>         |  |访问次数限制  |否   |
+|Websocket| 市场接口 | <a href="#201"> market.\\$symbol.kline.\\$period</a>         |sub  |订阅 KLine 数据  | 否  |                                 
+|Websocket| 市场接口 | <a href="#202"> market.\\$symbol.kline.\\$period</a>         | req |请求 KLine 数据  | 否  |
+|Websocket| 市场接口 | <a href="#203"> market.\\$symbol.depth.\\$type </a>         |sub  |订阅 Market Depth 数据  | 否  |
+|Websocket| 市场接口 | <a href="#204"> market.\\$symbol.depth.\\$type </a>         | req |请求 Market Depth 数据  |  否 |
+|Websocket| 市场接口 | <a href="#205"> market.$symbol.trade.detail </a>         | sub |订阅 Trade Detail 数据  | 否  |
+|Websocket| 市场接口 | <a href="#206"> market.$symbol.detail </a>         | req |请求 Trade Detail 数据  |否   |
+
 
 
 
@@ -381,7 +390,7 @@ URL
 
 | **参数名称** | **是否必须** | **数据类型** | **描述**                                   | **取值范围**       |
 | -------- | -------- | -------- | ---------------------------------------- | -------------- |
-| ch       | true     | string   | 数据所属的 channel，格式： market.\$symbol.detail.merged |                |
+| ch       | true     | string   | 数据所属的 channel，格式： market.$symbol.detail.merged |                |
 | status   | true     | string   | 请求处理结果                                   | "ok" , "error" |
 | tick     | true     | object   | K线数据                                     |                |
 | ts       | true     | number   | 响应生成时间点，单位：毫秒                            |                |
@@ -441,7 +450,7 @@ URL /market/trade
 
 | **参数名称** | **是否必须** | **类型** | **描述**                                   | **默认值** | **取值范围**     |
 | -------- | -------- | ------ | ---------------------------------------- | ------- | ------------ |
-| ch       | true     | string | 数据所属的 channel，格式： market.\$symbol.trade.detail |         |              |
+| ch       | true     | string | 数据所属的 channel，格式： market.$symbol.trade.detail |         |              |
 | status   | true     | string |                                          |         | "ok","error" |
 | tick     | true     | object | Trade 数据                                 |         |              |
 | ts       | true     | number | 发送时间                                     |         |              |
@@ -505,7 +514,7 @@ URL /market/history/trade
 
 | **参数名称** | **是否必须** | **数据类型** | **描述**                                   | **取值范围**     |
 | -------- | -------- | -------- | ---------------------------------------- | ------------ |
-| ch       | true     | string   | 数据所属的 channel，格式： market.\$symbol.trade.detail |              |
+| ch       | true     | string   | 数据所属的 channel，格式： market.$symbol.trade.detail |              |
 | data     | true     | object   | Trade 数据                                 |              |
 | status   | true     | string   |                                          | "ok"，"error" |
 | ts       | true     | number   | 响应生成时间点，单位：毫秒                            |              |
@@ -562,13 +571,13 @@ GET  http:///www.hbdm.com/api/v1
 签名认证
 --------
 
-#### 认证方式
+#### <a name="199">认证方式</a>
 
 用户私有接口(资产接口、交易接口)跟用户相关的所有接口都需加密验签，签证用户合法性
 
 签名认证方式跟pro现货签名一致，详情请参考https://github.com/huobiapi/API_Docs/wiki/REST_authentication
 
-#### 访问次数限制
+#### <a name="200">访问次数限制</a>
 
 公开行情接口和用户私有接口都有访问次数限制，公开行情接口每秒访问上限？次，用户私有接口每秒访问上限？次
 
@@ -716,7 +725,7 @@ URL /v1/contract_order
 | symbol           | string   | false      | "BTC","ETH"...                           |
 | contract_type    | string   | false      | 合约类型: "this_week":当周 "next_week":下周 "quarter":季度 |
 | contract_code    | string   | false      | BTC1403                                  |
-| client_order_id  | long     | true      | 客户自己填写和维护，这次一定要大于上一次                     |
+| client_order_id  | long     | false      | 客户自己填写和维护，这次一定要大于上一次                     |
 | price            | decimal  | true      | 价格                                       |
 | volume           | long     | true      | 委托数量(张)                                  |
 | direction        | string   | true      | "buy":买 "sell":卖                         |
@@ -1306,12 +1315,12 @@ Websocket API
 市场接口
 --------
 
-#### 订阅 KLine 数据
+####  <a name="201">订阅 KLine 数据</a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
 ```
 {
-"sub": "market.\$symbol.kline.\$period",
+"sub": "market.$symbol.kline.$period",
 "id": "id generate by client"
 }
 ```
@@ -1404,12 +1413,12 @@ tick 说明
  "ts": 1494310283622
 }
 ```
-#### 请求 KLine 数据    
+####  <a name="202">请求 KLine 数据 </a>   
 
-成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
+成功建立和 WebSocket API 的连接之后，向Server 发送如下格式的数据来请求数据：
 ```
 {
- "req": "market.\$symbol.kline.\$period",
+ "req": "market.$symbol.kline.$period",
  "id": "id generated by client",
  "from": "optional, type: long, 2017-07-28T00:00:00+08:00 至2050-01-01T00:00:00+08:00 之间的时间点，单位：秒",
   "to": "optional, type: long, 2017-07-28T00:00:00+08:00 至2050-01-01T00:00:00+08:00 之间的时间点，单位：秒，必须比 from 大"}
@@ -1469,12 +1478,12 @@ from: t1 and to: t2, should satisfy 1325347200 \< t1 \< t2 \< 2524579200.
  ]
 }
 ```
-#### 订阅 Market Depth 数据 
+####  <a name="203">订阅 Market Depth 数据 </a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
 ```
 {
-"sub": "market.\$symbol.depth.\$type",
+"sub": "market.$symbol.depth.$type",
 "id": "id generated by client"
 }
 ```
@@ -1533,12 +1542,12 @@ tick 说明：
    ]
 }
 ```
-#### 请求 Market Depth 数据 
+####  <a name="204">请求 Market Depth 数据 </a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
 ```
 {
- "req": "market.\$symbol.depth.\$type",
+ "req": "market.$symbol.depth.$type",
  "id": "3123213324"
 }
 ```
@@ -1572,12 +1581,12 @@ tick 说明：
   }
 }
 ```
-#### 订阅 Trade Detail 数据 
+####  <a name="205">订阅 Trade Detail 数据 </a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
 ```
 {
-"sub": "market.\$symbol.trade.detail",
+"sub": "market.$symbol.trade.detail",
 "id": "id generated by client"
 }
 ```
@@ -1649,12 +1658,12 @@ data 说明：
 
 由于撮合这个接口字段amount改成vol成本太高，这里成交量(张)用amount
 
-#### 请求 Market Detail 数据
+####  <a name="206">请求 Market Detail 数据</a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
 ```
 {
-"req": "market.\$symbol.detail",
+"req": "market.$symbol.detail",
 "id": "id generated by client"
 }
 ```
