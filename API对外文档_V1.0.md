@@ -609,8 +609,8 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
       "profit_real": 3.45,
       "profit_unreal": 7.45,
       "risk_rate": 100,
-	  "available_withdraw":4.0989898,
-      "liquidation_price": 100
+	  "liquidation_price": 100,
+	  "available_withdraw":4.0989898
      },
     {
       "symbol": "ETH",
@@ -621,8 +621,8 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
       "profit_real": 3.45,
       "profit_unreal": 7.45,
       "risk_rate": 100,
-	  "available_withdraw":4.7389859,
-      "liquidation_price": 100
+	  "liquidation_price": 100,
+	  "available_withdraw":4.0989898
      }
    ],
   "ts":158797866555
