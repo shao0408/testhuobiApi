@@ -588,7 +588,8 @@ URL  /v1/contract_account_info
 | profit_unreal        | true     | decimal | 未实现盈亏                |                |
 | risk_rate            | true     | decimal | 保证金率                 |                |
 | liquidation_price    | true     | decimal | 预估爆仓价                |                |
-| available_withdraw    | true     | decimal | 可提现金额            |                |
+| available_withdraw   | true     | decimal | 可划转数量            |                |
+| lever_rate           | true     | decimal | 杠杠倍数           |                |
 | \</list\>            |          |         |                      |                |
 | ts                   | number   | long    | 响应生成时间点，单位：毫秒        |                |
 
@@ -608,9 +609,9 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
       "margin_available": 0.34,
       "profit_real": 3.45,
       "profit_unreal": 7.45,
+	  "available_withdraw":4.0989898,
       "risk_rate": 100,
-	  "liquidation_price": 100,
-	  "available_withdraw":4.0989898
+      "liquidation_price": 100
      },
     {
       "symbol": "ETH",
@@ -620,9 +621,9 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
       "margin_available": 0.34,
       "profit_real": 3.45,
       "profit_unreal": 7.45,
+	  "available_withdraw":4.7389859,
       "risk_rate": 100,
-	  "liquidation_price": 100,
-	  "available_withdraw":4.0989898
+      "liquidation_price": 100
      }
    ],
   "ts":158797866555
