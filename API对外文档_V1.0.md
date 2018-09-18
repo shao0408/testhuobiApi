@@ -262,7 +262,7 @@ tick 说明:
 ```
 **示例**
 ```
-GET http:///api.hbdm.com/market/depth?symbol=BTC_CQ&type=step5
+GET http://api.hbdm.com/market/depth?symbol=BTC_CQ&type=step5
 
 # Response
 {
@@ -395,7 +395,7 @@ tick说明:
 ```
 **示例**
 ```
-GET  http:api.hbdm.com/market/detail/merged?symbol=BTC_CQ
+GET  http://api.hbdm.com/market/detail/merged?symbol=BTC_CQ
 
 # Response
 {
@@ -519,7 +519,7 @@ data说明：
 
 **示例**
 ```
-GET  http:///www.hbdm.com/api/v1
+GET  http://api.hbdm.com/market/history/trade?symbol=BTC_CQ&size=100
 
 # Response
 {
@@ -780,7 +780,7 @@ URL /v1/contract_batchorder
 
 **示例**
 ```
-POST  http:///api.hbdm.com/api/v1/contract_batchorder
+POST  http://api.hbdm.com/api/v1/contract_batchorder
 
 # Response
 {
@@ -1164,7 +1164,7 @@ URL  /v1/contract_openorders
 
 **示例**
 ```
-POST http:///www.hbdm.com/api/v1/contract_openorders
+POST http://www.hbdm.com/api/v1/contract_openorders
 
 # Response
 {
@@ -1733,7 +1733,6 @@ tick数据说明：
 | 1046 | 持仓未初始化             |
 | 1047 | 可用保证金不足            |
 | 1048 | 持仓量不足              |
-| 1049 | 市价单不可以开仓           |
 | 1050 | 客户报单号重复            |
 | 1051 | 没有可撤订单             |
 | 1052 | 超出批量数目限制           |
