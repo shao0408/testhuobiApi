@@ -24,10 +24,10 @@
 |Restful| 交易接口 |  <a href="#110"> /v1/contract_hisorders  </a>         | POST |获取合约历史委托  | 是  |
 |签名认证| 认证方式 | <a href="#199"> 认证方式 </a>         |  |认证方式  | 否  |
 |签名认证| 访问次数限制 | <a href="#200"> 访问次数限制 </a>         |  |访问次数限制  |否   |
-|Websocket| 市场接口 | <a href="#201"> market.\\$symbol.kline.\\$period</a>         |sub  |订阅 KLine 数据  | 否  |                                 
-|Websocket| 市场接口 | <a href="#202"> market.\\$symbol.kline.\\$period</a>         | req |请求 KLine 数据  | 否  |
-|Websocket| 市场接口 | <a href="#203"> market.\\$symbol.depth.\\$type </a>         |sub  |订阅 Market Depth 数据  | 否  |
-|Websocket| 市场接口 | <a href="#204"> market.\\$symbol.depth.\\$type </a>         | req |请求 Market Depth 数据  |  否 |
+|Websocket| 市场接口 | <a href="#201"> market.$symbol.kline.$period</a>         |sub  |订阅 KLine 数据  | 否  |                                 
+|Websocket| 市场接口 | <a href="#202"> market.$symbol.kline.$period</a>         | req |请求 KLine 数据  | 否  |
+|Websocket| 市场接口 | <a href="#203"> market.$symbol.depth.$type </a>         |sub  |订阅 Market Depth 数据  | 否  |
+|Websocket| 市场接口 | <a href="#204"> market.$symbol.depth.$type </a>         | req |请求 Market Depth 数据  |  否 |
 |Websocket| 市场接口 | <a href="#205"> market.$symbol.trade.detail </a>         | sub |订阅 Trade Detail 数据  | 否  |
 |Websocket| 市场接口 | <a href="#206"> market.$symbol.detail </a>         | req |请求 Trade Detail 数据  |否   |
 
