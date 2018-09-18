@@ -609,7 +609,7 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
       "margin_available": 0.34,
       "profit_real": 3.45,
       "profit_unreal": 7.45,
-	  "available_withdraw":4.0989898,
+      "available_withdraw":4.0989898,
       "risk_rate": 100,
       "liquidation_price": 100
      },
@@ -621,7 +621,7 @@ POST  http://api.hbdm.com/api/v1/contract_account_info
       "margin_available": 0.34,
       "profit_real": 3.45,
       "profit_unreal": 7.45,
-	  "available_withdraw":4.7389859,
+      "available_withdraw":4.7389859,
       "risk_rate": 100,
       "liquidation_price": 100
      }
