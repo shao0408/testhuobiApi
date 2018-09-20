@@ -1032,8 +1032,8 @@ URL /v1/contract_order_detail
 
 | **参数名称**   | **是否必须** | **类型**     | **描述**         |
 | ---------- | -------- | ---------- | -------------- |
-| symbol     | **true** | **string** | "BTC","ETH"... |
-| order_id   | **true** | **long**   | **订单id**       |
+| symbol     | true     | string     | "BTC","ETH"... |
+| order_id   | true     | long       | 订单id      |
 | page_index | false    | int        | 第几页,不填第一页      |
 | page_size  | false    | int        | 不填默认20，不得多于50  |
 
