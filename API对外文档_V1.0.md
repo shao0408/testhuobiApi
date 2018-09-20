@@ -843,7 +843,7 @@ order_id和client_order_id都可以用来撤单，同时只可以设置其中一
 
 **示例**
 ```
-POST  http:///api.hbdm.com.com/api/v1/contract_cancel
+POST  http://api.hbdm.com.com/api/v1/contract_cancel
 
 # Response
 #多笔订单返回结果(成功订单ID,失败订单ID)
