@@ -8,8 +8,8 @@
 		<artifactId>api</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>api-demo</artifactId>
-	<name>api-demo</name>
+	<artifactId>REST-java-demo</artifactId>
+	<name>REST-java-demo</name>
 	<dependencies>
 		<dependency>
    		 <groupId>commons-lang</groupId>
