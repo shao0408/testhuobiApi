@@ -22,8 +22,6 @@
 |Restful| 交易接口 |  <a href="#108"> /v1/contract_order_detail  </a>         | POST |获取订单明细信息  | 是  |
 |Restful| 交易接口 |  <a href="#109"> /v1/contract_openorders  </a>         | POST | 获取合约当前未成交委托 | 是  |
 |Restful| 交易接口 |  <a href="#110"> /v1/contract_hisorders  </a>         | POST |获取合约历史委托  | 是  |
-|签名认证| 认证方式 | <a href="#199"> 认证方式 </a>         |  |认证方式  | 否  |
-|签名认证| 访问次数限制 | <a href="#200"> 访问次数限制 </a>         |  |访问次数限制  |否   |
 |Websocket| 市场接口 | <a href="#201"> market.$symbol.kline.$period</a>         |sub  |订阅 KLine 数据  | 否  |                                 
 |Websocket| 市场接口 | <a href="#202"> market.$symbol.kline.$period</a>         | req |请求 KLine 数据  | 否  |
 |Websocket| 市场接口 | <a href="#203"> market.$symbol.depth.$type </a>         |sub  |订阅 Market Depth 数据  | 否  |
@@ -32,6 +30,19 @@
 |Websocket| 市场接口 | <a href="#206"> market.$symbol.detail </a>         | req |请求 Trade Detail 数据  |否   |
 
 
+
+签名认证
+--------
+
+#### <a name="199">认证方式</a>
+
+用户私有接口(资产接口、交易接口)跟用户相关的所有接口都需加密验签，签证用户合法性
+
+签名认证方式跟pro现货签名一致，详情请参考https://github.com/huobiapi/API_Docs/wiki/REST_authentication
+
+#### <a name="200">访问次数限制</a>
+
+公开行情接口和用户私有接口都有访问次数限制，公开行情接口每秒访问上限10次，用户私有接口每秒访问上限5次
 
 
 
@@ -544,21 +555,6 @@ GET  http://api.hbdm.com/market/history/trade?symbol=BTC_CQ&size=100
 }
 
 ```
-
-
-签名认证
---------
-
-#### <a name="199">认证方式</a>
-
-用户私有接口(资产接口、交易接口)跟用户相关的所有接口都需加密验签，签证用户合法性
-
-签名认证方式跟pro现货签名一致，详情请参考https://github.com/huobiapi/API_Docs/wiki/REST_authentication
-
-#### <a name="200">访问次数限制</a>
-
-公开行情接口和用户私有接口都有访问次数限制，公开行情接口每秒访问上限10次，用户私有接口每秒访问上限5次
-
 
 资产接口
 --------
