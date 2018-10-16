@@ -820,6 +820,7 @@ URL /v1/contract_cancel
 | --------------- | -------- | ------ | ------------------------------------ |
 | order_id        | false    | string | 订单ID（ 多个订单ID中间以","分隔,一次最多允许撤消50个订单 ） |
 | client_order_id | false    | string | 客户订单ID(多个订单ID中间以","分隔,一次最多允许撤消50个订单) |
+| symbol          | true     | string | "BTC","ETH"...|
 
 **备注**：
 order_id和client_order_id都可以用来撤单，同时只可以设置其中一种，如果设置了两种，默认以order_id来撤单。
@@ -932,6 +933,7 @@ URL /v1/contract_order_info
 | --------------- | -------- | ------ | ------------------------------------ |
 | order_id        | false    | string | 订单ID（ 多个订单ID中间以","分隔,一次最多允许查询20个订单 ） |
 | client_order_id | false    | string | 客户订单ID(多个订单ID中间以","分隔,一次最多允许查询20个订单) |
+| symbol          | true     | string | "BTC","ETH"...|
 
 **备注**：order_id和client_order_id都可以用来查询，同时只可以设置其中一种，如果设置了两种，默认以order_id来查询。
 
@@ -1030,6 +1032,7 @@ URL /v1/contract_order_detail
 | ---------- | -------- | ---------- | -------------- |
 | symbol     | true     | string     | "BTC","ETH"... |
 | order_id   | true     | long       | 订单id      |
+| createAt   | true     | long      | 下单时间戳|
 | page_index | false    | int        | 第几页,不填第一页      |
 | page_size  | false    | int        | 不填默认20，不得多于50  |
 
