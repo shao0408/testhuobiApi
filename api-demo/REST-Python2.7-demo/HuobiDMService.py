@@ -238,54 +238,39 @@ class HuobiDM:
     
     
     
-    # 合约批量下单 ?
-    def send_contract_batchorder(self, symbol, contract_type, contract_code, 
-                            client_order_id, price,volume,direction,offset,
-                            lever_rate,order_price_type):
+    # 合约批量下单
+    def send_contract_batchorder(self, orders_data):
         """
-        :symbol:        "BTC","ETH"..
-        :contract_type: "this_week", "next_week", "quarter"
-        :contract_code: "BTC181228"
-        :client_order_id:   必填   客户自己填写和维护，这次一定要大于上一次
-        :price              必填   价格
-        :volume             必填   委托数量（张）
-        :direction          必填   "buy" "sell"
-        :offset             必填   "open", "close"
-        :lever_rate         必填   杠杆倍数
-        :order_price_type   必填   "limit"限价， "opponent" 对手价
-        备注：如果contract_code填了值，那就按照contract_code去下单，如果contract_code没有填值，则按照symbol+contract_type去下单。
-        :
+        orders_data: example:
+        orders_data = {'orders_data': [
+               {'symbol': 'BTC', 'contract_type': 'quarter',  
+                'contract_code':'BTC181228',  'client_order_id':'', 
+                'price':1, 'volume':1, 'direction':'buy', 'offset':'open', 
+                'leverRate':20, 'orderPriceType':'limit'},
+               {'symbol': 'BTC','contract_type': 'quarter', 
+                'contract_code':'BTC181228', 'client_order_id':'', 
+                'price':2, 'volume':2, 'direction':'buy', 'offset':'open', 
+                'leverRate':20, 'orderPriceType':'limit'}]}    
+            
+        Parameters of each order: refer to send_contract_order
         """
         
-        params = {"price": price,
-                  "volume": volume,
-                  "direction": direction,
-                  "offset": offset,
-                  "lever_rate": lever_rate,
-                  "order_price_type": order_price_type}
-        if symbol:
-            params["symbol"] = symbol
-        if contract_type:
-            params['contract_type'] = contract_type
-        if contract_code:
-            params['contract_code'] = contract_code
-        if client_order_id:
-            params['client_order_id'] = client_order_id
-    
+        params = orders_data
         request_path = '/api/v1/contract_batchorder'
         return api_key_post(self.__url, request_path, params, self.__access_key, self.__secret_key)
     
     
     # 撤销订单
-    def cancel_contract_order(self, order_id='', client_order_id=''):
+    def cancel_contract_order(self, symbol, order_id='', client_order_id=''):
         """
         参数名称          是否必须 类型     描述
+        symbol           true   string  BTC, ETH, ...
         order_id	         false  string  订单ID（ 多个订单ID中间以","分隔,一次最多允许撤消50个订单 ）
         client_order_id  false  string  客户订单ID(多个订单ID中间以","分隔,一次最多允许撤消50个订单)
         备注： order_id 和 client_order_id都可以用来撤单，同时只可以设置其中一种，如果设置了两种，默认以order_id来撤单。
         """
         
-        params = {}
+        params = {"symbol": symbol}
         if order_id:
             params["order_id"] = order_id
         if client_order_id:
@@ -307,15 +292,16 @@ class HuobiDM:
     
     
     # 获取合约订单信息
-    def get_contract_order_info(self, order_id='', client_order_id=''):
+    def get_contract_order_info(self, symbol, order_id='', client_order_id=''):
         """
-        参数名称         是否必须  类型     描述
-        order_id        false   string  订单ID（ 多个订单ID中间以","分隔,一次最多允许查询20个订单 ）
-        client_order_id false   string  客户订单ID(多个订单ID中间以","分隔,一次最多允许查询20个订单)
+        参数名称	        是否必须	类型	    描述
+        symbol          true    string  BTC, ETH, ...
+        order_id	        false	string	订单ID（ 多个订单ID中间以","分隔,一次最多允许查询20个订单 ）
+        client_order_id	false	string	客户订单ID(多个订单ID中间以","分隔,一次最多允许查询20个订单)
         备注：order_id和client_order_id都可以用来查询，同时只可以设置其中一种，如果设置了两种，默认以order_id来查询。
         """
         
-        params = {}
+        params = {"symbol": symbol}
         if order_id:
             params["order_id"] = order_id
         if client_order_id:
