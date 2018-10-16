@@ -961,7 +961,7 @@ URL /v1/contract_order_info
 | trade_avg_price      | true     | decimal | 成交均价                                     |                |
 | margin_frozen        | true     | decimal | 冻结保证金                                    |                |
 | profit               | true     | decimal | 收益                                       |                |
-| status               | true     | int     | 订单状态(1准备提交 2已定序 3已提交 4部分成交 5部分成交已撤单 6全部成交 7已撤单 11撤单中) |                |
+| status               | true     | int     | 订单状态(1准备提交 2准备提交 3已提交 4部分成交 5部分成交已撤单 6全部成交 7已撤单 11撤单中) |                |
 | order_source         | true     | string  | 订单来源（1:系统订单、2:用户网页订单、3:用户API订单、4:用户APP订单 5爆仓来源、6交割来源） |                |
 | \</list\>            |          |         |                                          |                |
 | ts                   | true     | long    | 时间戳                                      |                |
