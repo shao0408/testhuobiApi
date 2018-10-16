@@ -64,7 +64,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 	public static final String HUOBI_CONTRACE_OPENORDERS = "/api/v1/contract_openorders";
 
 	@Override
-	public String future_contract_info(String symbol, String contractType, String contractCode) {
+	public String futureContractInfo(String symbol, String contractType, String contractCode) {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -80,7 +80,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 	}
 
 	@Override
-	public String future_contract_index(String symbol) throws HttpException, IOException {
+	public String futureContractIndex(String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -91,7 +91,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 	}
 
 	@Override
-	public String future_price_limit(String symbol, String contractType, String contractCode)
+	public String futurePriceLimit(String symbol, String contractType, String contractCode)
 			throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
@@ -109,7 +109,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 	}
 
 	@Override
-	public String future_open_interest(String symbol, String contractType, String contractCode)
+	public String futureOpenInterest(String symbol, String contractType, String contractCode)
 			throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
@@ -126,7 +126,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return contractinfoRes;
 	}
 
-	public String future_market_depth(String symbol, String type) throws HttpException, IOException {
+	public String futureMarketDepth(String symbol, String type) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -138,7 +138,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return contractinfoRes;
 	}
 
-	public String future_market_history_kline(String symbol, String period) throws HttpException, IOException {
+	public String futureMarketHistoryKline(String symbol, String period,String size) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -146,20 +146,23 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(period)) {
 			params.put("period", period);
 		}
+		if (!StringUtils.isEmpty(size)) {
+			params.put("size", size);
+		}
 		String res = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_KLINE, params);
 		return res;
 	}
 
-	public String future_market_detail_merged(String symbol) throws HttpException, IOException {
+	public String futureMarketDetailMerged(String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
-		}
+		}		
 		String res = HbdmHttpClient.getInstance().doGet(url_prex + HUOBI_FUTURE_TICKER, params);
 		return res;
 	}
 
-	public String future_market_detail_trade(String symbol, String size) throws HttpException, IOException {
+	public String futureMarketDetailTrade(String symbol, String size) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -171,7 +174,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_market_history_trade(String symbol, String size) throws HttpException, IOException {
+	public String futureMarketHistoryTrade(String symbol, String size) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -183,7 +186,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_contract_account_info(String symbol) throws HttpException, IOException {
+	public String futureContractAccountInfo(String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -194,7 +197,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_contract_position_info(String symbol) throws HttpException, IOException {
+	public String futureContractPositionInfo(String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -205,7 +208,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_contract_order(String symbol, String contractType, String contractCode, String clientOrderId,
+	public String futureContractOrder(String symbol, String contractType, String contractCode, String clientOrderId,
 			String price, String volume, String direction, String offset, String leverRate, String orderPriceType)
 			throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
@@ -245,15 +248,15 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_contract_batchorder(List<Order> orders) throws HttpException, IOException {
+	public String futureContractBatchorder(List<Order> orders) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		params.put("orders_data", JSON.toJSONString(orders));
-		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST", url_prex + HUOBI_FUTURE_ORDER,
+		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST", url_prex + HUOBI_FUTURE_CONTRACT_BATCHORDER,
 				params, new HashMap<>());
 		return res;
 	}
 
-	public String future_contract_cancel(String orderId, String clientOrderId) throws HttpException, IOException {
+	public String futureContractCancel(String orderId, String clientOrderId,String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(orderId)) {
 			params.put("order_id", orderId);
@@ -261,13 +264,15 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(clientOrderId)) {
 			params.put("client_order_id", clientOrderId);
 		}
-
+		if (!StringUtils.isEmpty(symbol)) {
+			params.put("symbol", symbol);
+		}
 		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_ORDER_CANCEL, params, new HashMap<>());
 		return res;
 	}
 
-	public String future_contract_cancelall(String symbol) throws HttpException, IOException {
+	public String futureContractCancelall(String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
 			params.put("symbol", symbol);
@@ -278,7 +283,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_contract_order_info(String orderId, String clientOrderId) throws HttpException, IOException {
+	public String futureContractOrderInfo(String orderId, String clientOrderId,String symbol) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(orderId)) {
 			params.put("order_id", orderId);
@@ -286,13 +291,15 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(clientOrderId)) {
 			params.put("client_order_id", clientOrderId);
 		}
-
+		if (!StringUtils.isEmpty(symbol)) {
+			params.put("symbol", symbol);
+		}
 		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_ORDER_CANCEL, params, new HashMap<>());
 		return res;
 	}
 
-	public String future_contract_order_detail(String symbol, String orderId, String pageIndex, String pageSize)
+	public String futureContractOrderDetail(String symbol, String orderId, String pageIndex, String pageSize,String createdAt)
 			throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
@@ -307,12 +314,15 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		if (!StringUtils.isEmpty(pageSize)) {
 			params.put("page_size", pageSize);
 		}
+		if (!StringUtils.isEmpty(createdAt)) {
+			params.put("createdAt", createdAt);
+		}
 		String res = HbdmHttpClient.getInstance().call(api_key, secret_key, "POST",
 				url_prex + HUOBI_FUTURE_CONTRACT_ORDER_DETAIL, params, new HashMap<>());
 		return res;
 	}
 
-	public String future_contract_openorders(String symbol, String pageIndex, String pageSize)
+	public String futureContractOpenorders(String symbol, String pageIndex, String pageSize)
 			throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {
@@ -329,7 +339,7 @@ public class HbdmRestApiV1 implements IHbdmRestApi {
 		return res;
 	}
 
-	public String future_contract_hisorders(String symbol, String tradeType, String type, String status,
+	public String futureContractHisorders(String symbol, String tradeType, String type, String status,
 			String createDate, String pageIndex, String pageSize) throws HttpException, IOException {
 		Map<String, String> params = new HashMap<>();
 		if (!StringUtils.isEmpty(symbol)) {

@@ -22,7 +22,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_info(String symbol, String contractType, String contractCode)
+	public String futureContractInfo(String symbol, String contractType, String contractCode)
 			throws HttpException, IOException;
 
 	/**
@@ -34,7 +34,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_index(String symbol) throws HttpException, IOException;
+	public String futureContractIndex(String symbol) throws HttpException, IOException;
 
 	/**
 	 * 获取合约最高限价和最低限价
@@ -49,7 +49,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_price_limit(String symbol, String contractType, String contractCode)
+	public String futurePriceLimit(String symbol, String contractType, String contractCode)
 			throws HttpException, IOException;
 
 	/**
@@ -65,7 +65,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_open_interest(String symbol, String contractType, String contractCode)
+	public String futureOpenInterest(String symbol, String contractType, String contractCode)
 			throws HttpException, IOException;
 
 	/**
@@ -79,7 +79,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_market_depth(String symbol, String type) throws HttpException, IOException;
+	public String futureMarketDepth(String symbol, String type) throws HttpException, IOException;
 
 	/**
 	 * 获取K线数据
@@ -92,7 +92,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_market_history_kline(String symbol, String period) throws HttpException, IOException;
+	public String futureMarketHistoryKline(String symbol, String period,String size) throws HttpException, IOException;
 
 	/**
 	 * 获取聚合行情
@@ -103,7 +103,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_market_detail_merged(String symbol) throws HttpException, IOException;
+	public String futureMarketDetailMerged(String symbol) throws HttpException, IOException;
 
 	/**
 	 * 获取市场最近成交记录
@@ -114,7 +114,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_market_detail_trade(String symbol, String size) throws HttpException, IOException;
+	public String futureMarketDetailTrade(String symbol, String size) throws HttpException, IOException;
 
 	/**
 	 * 批量获取最近的交易记录
@@ -125,7 +125,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_market_history_trade(String symbol, String size) throws HttpException, IOException;
+	public String futureMarketHistoryTrade(String symbol, String size) throws HttpException, IOException;
 
 	/**
 	 * 获取用户账户信息
@@ -136,7 +136,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_account_info(String symbol) throws HttpException, IOException;
+	public String futureContractAccountInfo(String symbol) throws HttpException, IOException;
 
 	/**
 	 * 获取用户持仓信息
@@ -147,7 +147,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_position_info(String symbol) throws HttpException, IOException;
+	public String futureContractPositionInfo(String symbol) throws HttpException, IOException;
 
 	/**
 	 * 获取用户订单信息
@@ -176,7 +176,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_order(String symbol, String contractType, String contractCode, String clientOrderId,
+	public String futureContractOrder(String symbol, String contractType, String contractCode, String clientOrderId,
 			String price, String volume, String direction, String offset, String leverRate, String orderPriceType)
 			throws HttpException, IOException;
 
@@ -207,7 +207,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_batchorder(List<Order> orders) throws HttpException, IOException;
+	public String futureContractBatchorder(List<Order> orders) throws HttpException, IOException;
 
 	/**
 	 * 撤销订单
@@ -218,7 +218,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_cancel(String orderId, String clientOrderId) throws HttpException, IOException;
+	public String futureContractCancel(String orderId, String clientOrderId,String symbol) throws HttpException, IOException;
 
 	/**
 	 * 全部撤单
@@ -228,7 +228,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_cancelall(String symbol) throws HttpException, IOException;
+	public String futureContractCancelall(String symbol) throws HttpException, IOException;
 
 	/**
 	 * 获取合约订单信息
@@ -240,7 +240,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_order_info(String orderId, String clientOrderId) throws HttpException, IOException;
+	public String futureContractOrderInfo(String orderId, String clientOrderId,String symbol) throws HttpException, IOException;
 
 	/**
 	 * 获取订单明细信息
@@ -256,7 +256,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_order_detail(String symbol, String orderId, String pageIndex, String pageSize)
+	public String futureContractOrderDetail(String symbol, String orderId, String pageIndex, String pageSize,String createdAt)
 			throws HttpException, IOException;
 
 	/**
@@ -271,7 +271,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_openorders(String symbol, String pageIndex, String pageSize)
+	public String futureContractOpenorders(String symbol, String pageIndex, String pageSize)
 			throws HttpException, IOException;
 
 	/**
@@ -293,7 +293,7 @@ public interface IHbdmRestApi {
 	 * @throws HttpException
 	 * @throws IOException
 	 */
-	public String future_contract_hisorders(String symbol, String tradeType, String type, String status,
+	public String futureContractHisorders(String symbol, String tradeType, String type, String status,
 			String createDate, String pageIndex, String pageSize) throws HttpException, IOException;
 
 }
