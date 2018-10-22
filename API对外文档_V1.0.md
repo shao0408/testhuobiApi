@@ -308,7 +308,7 @@ URL
 | -------- | -------- | ------- | ------ | ------- | ---------------------------------------- |
 | symbol   | true     | string  | 合约名称   |         | 如"BTC_CW"表示BTC当周合约，"BTC_NW"表示BTC次周合约，"BTC_CQ"表示BTC季度合约 |
 | period   | true     | string  | K线类型   |         | 1min, 5min, 15min, 30min, 60min, 1hour,4hour,1day, 1mon |
-| size     | false    | integer | 获取数量   | 150     | [1,2000]                                 |
+| size     | true    | integer | 获取数量   | 150     | [1,2000]                                 |
 
 **返回参数**
 
