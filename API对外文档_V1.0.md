@@ -1032,7 +1032,7 @@ URL /v1/contract_order_detail
 | ---------- | -------- | ---------- | -------------- |
 | symbol     | true     | string     | "BTC","ETH"... |
 | order_id   | true     | long       | 订单id      |
-| createAt   | true     | long      | 下单时间戳|
+| created_at   | true     | long      | 下单时间戳|
 | page_index | false    | int        | 第几页,不填第一页      |
 | page_size  | false    | int        | 不填默认20，不得多于50  |
 
