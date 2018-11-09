@@ -25,7 +25,7 @@
 |Websocket| 市场接口 | <a href="#201"> market.$symbol.kline.$period</a>         |sub  |订阅 KLine 数据  | 否  |                                 
 |Websocket| 市场接口 | <a href="#202"> market.$symbol.kline.$period</a>         | req |请求 KLine 数据  | 否  |
 |Websocket| 市场接口 | <a href="#203"> market.$symbol.depth.$type </a>         |sub  |订阅 Market Depth 数据  | 否  |
-|Websocket| 市场接口 | <a href="#204"> market.$symbol.depth.$type </a>         | req |请求 Market Depth 数据  |  否 |
+|Websocket| 市场接口 | <a href="#204"> market.$symbol.detail </a>         | req |订阅 Market Detail 数据  |  否 |
 |Websocket| 市场接口 | <a href="#205"> market.$symbol.trade.detail </a>         | sub |订阅 Trade Detail 数据  | 否  |
 |Websocket| 市场接口 | <a href="#206"> market.$symbol.detail </a>         | req |请求 Trade Detail 数据  |否   |
 
@@ -1523,24 +1523,23 @@ tick 说明：
    ]
 }
 ```
-####  <a name="204">请求 Market Depth 数据 </a>
+####  <a name="204">订阅 Market Detail 数据 </a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来请求数据：
 ```
 {
- "req": "market.$symbol.depth.$type",
+ "req": "market.$symbol.detail",
  "id": "3123213324"
 }
 ```
 | **参数名称** | **是否必须** | **类型** | **描述**   | **默认值** | **取值范围**                                 |
 | -------- | -------- | ------ | -------- | ------- | ---------------------------------------- |
 | symbol   | true     | string | 交易对      |         | 如"BTC_CW"表示BTC当周合约，"BTC_NW"表示BTC次周合约，"BTC_CQ"表示BTC季度合约 |
-| type     | true     | string | Depth 类型 |         | step0, step1, step2, step3, step4, step5（合并深度0-5）；step0时，不合并深度 |
 
 请求 Market Depth 数据请求参数的例子：
 ```
 {
- "req": "market.BTC_CQ.depth.step0",
+ "req": "market.BTC_CQ.detail",
  "id": "id6"
 }
 ```
