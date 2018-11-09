@@ -1546,7 +1546,7 @@ tick 说明：
 请求成功返回数据的例子：
 ```
 {
- "subbed": "market.BTC_CQ.detail",
+ "ch": "market.BTC_CQ.detail",
  "ts":1539842520480,
  "tick": [
    {
@@ -1571,8 +1571,9 @@ tick 说明：
    }
  ]
 }
+```
 tick数据说明：
-
+```
 "tick":
   {
    "id": K线id,
@@ -1587,7 +1588,6 @@ tick数据说明：
 }
 ```
 
-```
 ####  <a name="205">订阅 Trade Detail 数据 </a>
 
 成功建立和 WebSocket API 的连接之后，向 Server 发送如下格式的数据来订阅数据：
