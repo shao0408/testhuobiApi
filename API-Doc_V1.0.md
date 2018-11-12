@@ -92,7 +92,7 @@ Note：If there is a number in the Contract Code row，inquiry with Contract_Cod
 
 **Example**
 ```
-GET http://api.hbdm.com/api/v1/contract_contract_info
+GET https://api.hbdm.com/api/v1/contract_contract_info
 
 # Response
 {
@@ -136,7 +136,7 @@ URL  /v1/contract_index
 
 **Example**
 ```
-GET  http://api.hbdm.com/api/v1/contract_index?symbol=BTC
+GET  https://api.hbdm.com/api/v1/contract_index?symbol=BTC
 
 # Response
 {
@@ -180,7 +180,7 @@ URL /v1/contract_price_limit
 
 **Example**
 ```
-GET  http://api.hbdm.com/api/v1/contract_price_limit?symbol=BTC&contract_type=this_week
+GET  https://api.hbdm.com/api/v1/contract_price_limit?symbol=BTC&contract_type=this_week
 
 # Response
 {
@@ -224,7 +224,7 @@ URL /v1/contract_open_interest
 
 **Example**
 ```
-GET  http://api.hbdm.com/api/v1/contract_open_interest?symbol=BTC&contract_type=this_week
+GET  https://api.hbdm.com/api/v1/contract_open_interest?symbol=BTC&contract_type=this_week
 
 # Response
 {
@@ -273,7 +273,7 @@ tick illustration:
 ```
 **Example**
 ```
-GET http://api.hbdm.com/market/depth?symbol=BTC_CQ&type=step5
+GET https://api.hbdm.com/market/depth?symbol=BTC_CQ&type=step5
 
 # Response
 {
@@ -336,7 +336,7 @@ Data Illustration：
 ```
 **Example**
 ```
-GET  http://api.hbdm.com/market/history/kline?period=1min&size=200&symbol=BTC_CQ
+GET  https://api.hbdm.com/market/history/kline?period=1min&size=200&symbol=BTC_CQ
 
 # Response
 {
@@ -407,7 +407,7 @@ tick Illustration
 ```
 **Example**
 ```
-GET  http://api.hbdm.com/market/detail/merged?symbol=BTC_CQ
+GET  https://api.hbdm.com/market/detail/merged?symbol=BTC_CQ
 
 # Response
 {
@@ -470,7 +470,7 @@ Tick Illustration：
 
 **Example**
 ```
-GET  http://api.hbdm.com/market/trade?symbol=BTC_CQ
+GET  https://api.hbdm.com/market/trade?symbol=BTC_CQ
 
 # Response
 {
@@ -531,7 +531,7 @@ data Illustration：
 
 **Example**
 ```
-GET  http://api.hbdm.com/market/history/trade?symbol=BTC_CQ&size=100
+GET  https://api.hbdm.com/market/history/trade?symbol=BTC_CQ&size=100
 
 # Response
 {
@@ -592,7 +592,7 @@ URL  /v1/contract_account_info
 
 **Example**
 ```
-POST  http://api.hbdm.com/api/v1/contract_account_info    
+POST  https://api.hbdm.com/api/v1/contract_account_info    
 
 # Response
 {
@@ -662,7 +662,7 @@ URL /v1/contract_position_info
 
 **Example**
 ```
-POST  http://api.hbdm.com/api/v1/contract_position
+POST  https://api.hbdm.com/api/v1/contract_position
 
 # Response
 {
@@ -725,7 +725,7 @@ URL /v1/contract_order
 
 **Example**
 ```
-POST  http://api.hbdm.com/api/v1/contract_order
+POST  https://api.hbdm.com/api/v1/contract_order
 
 # Response
 {
@@ -777,7 +777,7 @@ URL /v1/contract_batchorder
 
 **Example**
 ```
-POST  http://api.hbdm.com/api/v1/contract_batchorder
+POST  https://api.hbdm.com/api/v1/contract_batchorder
 
 # Response
 {
@@ -841,7 +841,7 @@ Both order_id and client_order_id can be used for order withdrawl，one of them 
 
 **Example**
 ```
-POST  http://api.hbdm.com.com/api/v1/contract_cancel
+POST  https://api.hbdm.com.com/api/v1/contract_cancel
 
 # Response
 # result of multiple order withdrawls (successful withdrew order ID, failed withdrew order ID)
@@ -889,7 +889,7 @@ URL /v1/contract_cancelall
 
 **Example**
 ```
-POST  http://api.hbdm.com.com/api/v1/contract_cancel      
+POST  https://api.hbdm.com.com/api/v1/contract_cancel      
 
 # Response
 {
@@ -969,7 +969,7 @@ URL /v1/contract_order_info
 
 **Example**
 ```
-POST  http://api.hbdm.com.com/api/v1/contract_order_info
+POST  https://api.hbdm.com.com/api/v1/contract_order_info
 
 # Response
 {
@@ -1072,7 +1072,7 @@ URL /v1/contract_order_detail
 
 **Example**
 ```
-POST  http://api.hbdm.com/api/v1/contract_order_detail
+POST  https://api.hbdm.com/api/v1/contract_order_detail
 
 # Response
 {
@@ -1164,7 +1164,7 @@ URL  /v1/contract_openorders
 
 **Example**
 ```
-POST http://www.hbdm.com/api/v1/contract_openorders
+POST https://www.hbdm.com/api/v1/contract_openorders
 
 # Response
 {
@@ -1251,7 +1251,7 @@ URL /v1/contract_hisorders
 
 **Example**
 ```
-POST http://api.hbdm.com/api/v1/contract_hisorders
+POST https://api.hbdm.com/api/v1/contract_hisorders
 
 # Response
 {
