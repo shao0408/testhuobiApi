@@ -2,12 +2,12 @@
 
   |**TYPE**|   **Market Type**   |**Context** |**Req Method**   |**Desc**                     |**Auth Required**        |                                                                                                                                            
   |----------- |------------------ |------------------------------------------------------------------------------------------------------------------------------------------------------------------- |---------- |---------------------------- |--------------|
-  |Websocket   |Market Interface |         [market.$symbol.kline.$period]|                                                                                                            sub        |Subscribe KLine Data              |No|
-  |Websocket   |Market Interface|           [market.$symbol.kline.$period]|                                                                                                                    req        |Request KLine Data              |No|
-  |Websocket   |Market Interface           |[market.$symbol.depth.$type] |                                                                                                                     sub        |Subscribe Market Depth Data        |No|
- |Websocket   |Market Interface           |[market.$symbol.detail](#Subscribe Trade Detail Data) |                                                                                                                     sub        |Subscribe Trade Detail Data       |No|
-  |Websocket   |Market Interface           |[market.$symbol.trade.detail] |                                                                                                                     req        |Request Trade Detail Data        |No|
-  |Websocket   |Market Interface           |[market.$symbol.trade.detail]|        sub |Subscribe Trade Detail Data   | No  | 
+  |Websocket   |Market Interface |         market.$symbol.kline.$period|                                                                                                            sub        |Subscribe KLine Data              |No|
+  |Websocket   |Market Interface|           market.$symbol.kline.$period|                                                                                                                    req        |Request KLine Data              |No|
+  |Websocket   |Market Interface           |market.$symbol.depth.$type |                                                                                                                     sub        |Subscribe Market Depth Data        |No|
+ |Websocket   |Market Interface           |market.$symbol.detail(#Subscribe Trade Detail Data) |                                                                                                                     sub        |Subscribe Trade Detail Data       |No|
+  |Websocket   |Market Interface           |market.$symbol.trade.detail |                                                                                                                     req        |Request Trade Detail Data        |No|
+  |Websocket   |Market Interface           |market.$symbol.trade.detail|        sub |Subscribe Trade Detail Data   | No  | 
 
 
 Market Interface
