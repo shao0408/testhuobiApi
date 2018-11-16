@@ -22,12 +22,6 @@ API List
 | Restful   | User Order Info  | <a href="#108"> /v1/contract_order_detail  </a>  | POST             | Get Trade Details of an Order                  | Yes                    |
 | Restful   | User Order Info  | <a href="#109"> /v1/contract_openorders  </a>    | POST             | Get Current Orders                             | Yes                    |
 | Restful   | User Order Info  | <a href="#110"> /v1/contract_hisorders  </a>     | POST             | Get History Orders                             | Yes                    |
-| Websocket | Market Data      | <a href="#201"> market.$symbol.kline.$period</a> | sub              | Subscribe KLine Data                           | No                     |
-| Websocket | Market Data      | <a href="#202"> market.$symbol.kline.$period</a> | req              | Request KLine Data                             | No                     |
-| Websocket | Market Data      | <a href="#203"> market.$symbol.depth.$type </a>  | sub              | Subscribe Market Depth Data                    | No                     |
-| Websocket | Market Data      | <a href="#204"> market.$symbol.depth.$type </a>  | req              | Request Market Depth Data                      | No                     |
-| Websocket | Market Data      | <a href="#205"> market.$symbol.trade.detail </a> | sub              | Subscribe Trade Detail Data                    | No                     |
-| Websocket | Market Data      | <a href="#206"> market.$symbol.detail </a>       | req              | Request Market Detail Data                     | No                     |
 
 
 
