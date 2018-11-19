@@ -661,7 +661,7 @@ URL /v1/contract_position_info
 
 **示例**
 ```
-POST  http://api.hbdm.com/api/v1/contract_position
+POST  http://api.hbdm.com/api/v1/contract_position_info
 
 # Response
 {
